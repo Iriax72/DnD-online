@@ -40,3 +40,7 @@ body{
 .hidden{
     display: None
 }
+
+h1{
+    color: white;
+}

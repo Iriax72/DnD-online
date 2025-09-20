@@ -7,6 +7,7 @@ let isHamburgerOpend = false
 
 const nav = document.querySelector("nav")
 
+const accueil_section = document.querySelector("#accueil")
 const account_section = document.querySelector("#account")
 const play_section = document.querySelector("#play")
 const social_section = document.querySelector("#social")
