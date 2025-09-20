@@ -39,5 +39,5 @@ function close_hamburger(){
     adjust_body_grid()
 }
 
-hamburger_closed.onclick() = open_hamburger
-hamburger_opend.onclick() = close_hamburger
+hamburger_closed.onclick = open_hamburger
+hamburger_opend.onclick = close_hamburger
