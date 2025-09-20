@@ -1,7 +1,7 @@
 const body = document.body
 
 const hamburger_button = document.querySelector("#hamburger_button")
-const hamburger_opend = document.querySelector("#hamburger_opend")
+const hamburger = document.querySelector("#hamburger")
 
 let isHamburgerOpend = false
 
@@ -38,10 +38,10 @@ function toggle_hamburger(){
 }
 
 function init(){
-    isHamburgerOpend = false
+    isHamburgerOpend = false;
     nav.classList.add("hidden")
-    adjust_body_grid()
+    adjust_body_grid();
 }
 
-init()
+init();
 hamburger_button.onclick = toggle_hamburger;
