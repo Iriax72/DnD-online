@@ -1,6 +1,6 @@
 const body = document.body
 
-const hamburger_closed = document.querySelector("#hamburger_closed")
+const hamburger_button = document.querySelector("#hamburger_button")
 const hamburger_opend = document.querySelector("#hamburger_opend")
 
 let isHamburgerOpend = false
@@ -25,19 +25,16 @@ function adjust_body_grid(){
     }
 }
 
-function open_hamburger(){
-    isHamburgerOpend = true
-    nav.classList.remove("hidden")
-    hamburger_closed.classList.add("hidden")
-    adjust_body_grid()
+function toggle_hamburger(){
+    if(isHamburgerOpend){
+        nav.classList.add("hidden")
+        adjust_body_grid()
+    }
+    else{
+        nav.classList.remove("hidden")
+        adjust_body_grid()
+    }
+    isHamburgerOpend = !isHamburgerOpend
 }
 
-function close_hamburger(){
-    isHamburgerOpend = false
-    nav.classList.add("hidden")
-    hamburger_opend.classList.remove("hidden")
-    adjust_body_grid()
-}
-
-hamburger_closed.onclick = open_hamburger
-hamburger_opend.onclick = close_hamburger
+hamburger_button.onclick = toggle_hamburger;
