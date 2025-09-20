@@ -16,10 +16,12 @@ body{
 }
 
 header{
+    background-color: lime;
     grid-area: header;
 }
 
 nav{
+    background-color: aqua;
     grid-area: nav;
 }
 
