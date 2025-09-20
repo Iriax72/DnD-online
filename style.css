@@ -20,10 +20,12 @@ header{
     grid-area: header;
     display: grid;
     grid-template-areas: "title nav";
+    padding: 6px;
 }
 
 header h1{
     grid-area: title;
+    margin: 0;
 }
 
 nav{
