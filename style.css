@@ -11,13 +11,19 @@ body{
 
 .without_nav{
     grid-template-areas: 
-    "header nav"
+    "title nav"
     "section nav";
 }
 
 header{
     background-color: lime;
     grid-area: header;
+    display: grid;
+    grid-template-areas: "title nav";
+}
+
+header h1{
+    grid-area: title;
 }
 
 nav{
