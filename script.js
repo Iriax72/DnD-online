@@ -37,4 +37,11 @@ function toggle_hamburger(){
     isHamburgerOpend = !isHamburgerOpend
 }
 
+function init(){
+    isHamburgerOpend = false
+    nav.classList.add("hidden")
+    adjust_body_grid()
+}
+
+init()
 hamburger_button.onclick = toggle_hamburger;
