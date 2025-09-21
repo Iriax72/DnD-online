@@ -51,7 +51,7 @@ function init(){
     visible_section = "accueil";
     nav.classList.add("hidden")
     adjust_body_grid();
-    update_visible_section();
+    update_visible_section(visible_section);
 }
 
 function update_visible_section(visible_section){
