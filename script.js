@@ -56,7 +56,7 @@ function init(){
 
 function update_visible_section(){
     sections.forEach(section => {
-        if (section.children[0].textContent.toLowerCase() != visible_section){
+        if (section.id != visible_section){
             section.classList.add("hidden")
         }
         else{
@@ -69,7 +69,7 @@ init();
 nav_button.onclick = toggle_nav;
 nav_buttons.forEach(element => {
     element.onclick = () => {
-        visible_section = element.textContent.toLowerCase();
+        visible_section = element.id.replace("btn_", "");
         update_visible_section();
     }
 });
