@@ -6,6 +6,7 @@ body{
 .with_nav{
     grid-template-areas: 
     "main header";
+    grid-template-columns: 1fr 150px;
 }
 
 .without_nav{
@@ -19,12 +20,16 @@ header{
     grid-area: header;
     display: grid;
     grid-template-areas: "title nav";
-    padding: 6px;
+    padding: 4px;
 }
 
 header h1{
     grid-area: title;
     margin: 0;
+}
+
+header button{
+
 }
 
 nav{
