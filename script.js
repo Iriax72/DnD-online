@@ -8,8 +8,8 @@ let isHamburgerOpend = false
 
 const nav = document.querySelector("nav")
 
-const nav_buttons = [...document.querySelector("#ulnav").children()]
-const sections = [...document.querySelector("main").children()]
+const nav_buttons = [...document.querySelector("#ulnav").children]
+const sections = [...document.querySelector("main").children]
 
 const accueil_section = document.querySelector("#accueil")
 const account_section = document.querySelector("#account")
@@ -48,13 +48,15 @@ function toggle_nav(){
 
 function init(){
     isHamburgerOpend = false;
+    visible_section = "accueil";
     nav.classList.add("hidden")
     adjust_body_grid();
+    update_visible_section();
 }
 
 function update_visible_section(){
     sections.forEach(section => {
-        if (section.children[0].textContent().toLowerCase() != visible_section){
+        if (section.children[0].textContent.toLowerCase() != visible_section){
             section.classList.add("hidden")
         }
         else{
@@ -67,7 +69,7 @@ init();
 nav_button.onclick = toggle_nav;
 nav_buttons.forEach(element => {
     element.onclick = () => {
-        visible_section = element.textContent().toLowerCase();
+        visible_section = element.textContent.toLowerCase();
         update_visible_section();
     }
 });
