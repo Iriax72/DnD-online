@@ -5,13 +5,13 @@ body{
 
 .with_nav{
     grid-template-areas: 
-    "header"
-    "main";
+    "main header";
 }
 
 .without_nav{
     grid-template-areas: 
-    "main header";
+    "header"
+    "main";
 }
 
 header{
