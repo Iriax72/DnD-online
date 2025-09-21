@@ -69,7 +69,7 @@ init();
 nav_button.onclick = toggle_nav;
 nav_buttons.forEach(element => {
     element.onclick = () => {
-        visible_section = element.id.replace("btn_", "");
+        visible_section = element.dataset.section;
         update_visible_section();
     }
 });
