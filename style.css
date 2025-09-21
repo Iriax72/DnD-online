@@ -11,8 +11,8 @@ body{
 
 .without_nav{
     grid-template-areas: 
-    "title nav"
-    "section nav";
+    "header"
+    "main header";
 }
 
 header{
@@ -66,9 +66,13 @@ nav{
     margin: 4px;
 }
 
-section{
-    grid-area: section;
+main{
+    grid-area: main;
     background-color: #aaaaaa;
+}
+
+section{
+    background-color: chartreuse;
 }
 
 .hidden{
