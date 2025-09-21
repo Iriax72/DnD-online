@@ -6,7 +6,7 @@ body{
 .with_nav{
     grid-template-areas: 
     "header"
-    "section";
+    "main";
 }
 
 .without_nav{
