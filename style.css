@@ -66,8 +66,8 @@ header div button{
 }
 
 header div button img{
-    width: 100%;
-    height: 100%;
+    width: auto;
+    max-height: 40px;
     object-fit: contain;
 }
 
