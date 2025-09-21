@@ -8,7 +8,7 @@ let isHamburgerOpend = false
 
 const nav = document.querySelector("nav")
 
-const nav_buttons = [...document.querySelector("#ulnav").children]
+const nav_buttons = [...document.querySelectorAll("header nav ul li button[data-section]")]
 const sections = [...document.querySelector("main").children]
 
 const accueil_section = document.querySelector("#accueil")
@@ -54,7 +54,7 @@ function init(){
     update_visible_section();
 }
 
-function update_visible_section(){
+function update_visible_section(visible_section){
     sections.forEach(section => {
         if (section.id != visible_section){
             section.classList.add("hidden")
@@ -70,6 +70,7 @@ nav_button.onclick = toggle_nav;
 nav_buttons.forEach(element => {
     element.onclick = () => {
         visible_section = element.dataset.section;
-        update_visible_section();
+        update_visible_section(visible_section);
+        toggle_nav();
     }
 });
