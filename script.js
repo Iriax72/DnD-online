@@ -28,13 +28,12 @@ function adjust_body_grid(){
 function toggle_hamburger(){
     if(isHamburgerOpend){
         nav.classList.add("hidden")
-        adjust_body_grid()
     }
     else{
         nav.classList.remove("hidden")
-        adjust_body_grid()
     }
     isHamburgerOpend = !isHamburgerOpend
+    adjust_body_grid();
 }
 
 function init(){
