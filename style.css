@@ -11,7 +11,7 @@ body{
 
 .without_nav{
     grid-template-areas: 
-    "header"
+    "header header"
     "main header";
 }
 
