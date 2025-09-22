@@ -4,7 +4,7 @@
         <?php require './html/header.html'; ?>
     </header>
     <main class="clickToQuitNav">
-        <?php require './html/section/accueil.html'; ?>
+        <?php require './html/sections/accueil.html'; ?>
     </main>
     <footer class="clickToQuitNav">
         <?php require './php/footer.php'; ?>
