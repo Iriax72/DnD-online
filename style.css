@@ -13,7 +13,8 @@ body{
 .body_without_nav{
     grid-template-areas: 
     "header"
-    "main";
+    "main"
+    "footer";
 }
 
 header{
