@@ -2,7 +2,7 @@
 <html lang=fr>
 <?php
 require "head.php";
-require "body.html";
+require "../body.html";
 require "footer.php";
 ?>
 </html>
