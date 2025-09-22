@@ -1,24 +1,15 @@
-const body = document.body
+const body = document.body;
+const header = body.querySelector("header");
+const nav = document.querySelector("nav");
 
-const header = body.querySelector("header")
-
-const nav_button = document.querySelector("#nav_button")
-
+const nav_button = document.querySelector("#nav_button");
 let isHamburgerOpend = false
+const nav_buttons = [...document.querySelectorAll("header nav ul li button[data-section]")];
+const sections = [...document.querySelector("main").children];
 
-const nav = document.querySelector("nav")
+let visible_section = "accueil";
 
-const nav_buttons = [...document.querySelectorAll("header nav ul li button[data-section]")]
-const sections = [...document.querySelector("main").children]
-
-const accueil_section = document.querySelector("#accueil")
-const account_section = document.querySelector("#account")
-const play_section = document.querySelector("#play")
-const social_section = document.querySelector("#social")
-const infos_section = document.querySelector("#infos")
-const settings_section = document.querySelector("#settings")
-
-let visible_section = "accueil"
+const elementsQuitNav = [...document.querySelectorAll(".clickToQuitNav")]
 
 function adjust_body_grid(){
     if(isHamburgerOpend){
@@ -31,25 +22,25 @@ function adjust_body_grid(){
         body.classList.remove("body_with_nav");
         body.classList.add("body_without_nav");
         header.classList.remove("header_with_nav");
-        header.classList.add("header_without_nav")
+        header.classList.add("header_without_nav");
     }
 }
 
 function toggle_nav(){
     if(isHamburgerOpend){
-        nav.classList.add("hidden")
+        nav.classList.add("hidden");
     }
     else{
-        nav.classList.remove("hidden")
+        nav.classList.remove("hidden");
     }
-    isHamburgerOpend = !isHamburgerOpend
+    isHamburgerOpend = !isHamburgerOpend;
     adjust_body_grid();
 }
 
 function init(){
     isHamburgerOpend = false;
     visible_section = "accueil";
-    nav.classList.add("hidden")
+    nav.classList.add("hidden");
     adjust_body_grid();
     update_visible_section(visible_section);
 }
@@ -57,10 +48,10 @@ function init(){
 function update_visible_section(visible_section){
     sections.forEach(section => {
         if (section.id != visible_section){
-            section.classList.add("hidden")
+            section.classList.add("hidden");
         }
         else{
-            section.classList.remove("hidden")
+            section.classList.remove("hidden");
         }
     })
 }
@@ -72,5 +63,12 @@ nav_buttons.forEach(element => {
         visible_section = element.dataset.section;
         update_visible_section(visible_section);
         toggle_nav();
+    }
+});
+elementsQuitNav.forEach(e => {
+    e.onclick = () => {
+        if(isHamburgerOpend){
+            toggle_nav();
+        }
     }
 });
