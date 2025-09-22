@@ -5,7 +5,8 @@ body{
 
 .body_with_nav{
     grid-template-areas: 
-    "main header";
+    "main header"
+    "footer header";
     grid-template-columns: 1fr 150px;
 }
 
@@ -103,4 +104,5 @@ main section h2{
 
 footer{
     background-color: yellow;
+    grid-area: footer;
 }
