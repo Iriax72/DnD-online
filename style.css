@@ -1,6 +1,7 @@
 body{
     background-color: #252525;
     display: grid;
+    padding: 0;
 }
 
 .body_with_nav{
@@ -21,6 +22,7 @@ header{
     background-color: lime;
     grid-area: header;
     display: grid;
+    margin: 0;
     padding: 4px;
 }
 
@@ -54,7 +56,7 @@ header div{
     background-color: orange;
     max-height: 46px;
     width: 100%;
-    padding: 3px;
+    padding: 0;
 }
 
 header div button{
@@ -64,6 +66,7 @@ header div button{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
     padding: 0;
 }
 
@@ -89,10 +92,12 @@ header nav ul li{
 main{
     grid-area: main;
     background-color: #aaaaaa;
+    margin: 0;
 }
 
 main section{
     background-color: chartreuse;
+    padding: 4px;
 }
 
 .hidden{
@@ -106,4 +111,6 @@ main section h2{
 footer{
     background-color: yellow;
     grid-area: footer;
+    margin: 0;
+    padding: 8px;
 }
