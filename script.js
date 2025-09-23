@@ -40,7 +40,7 @@ function init(){
 }
 
 init();
-nav_button.onclick = toggle_nav;
+nav_button.onclick = toggle_nav();
 elementsQuitNav.forEach(e => {
     e.onclick = () => {
         if(isHamburgerOpend){
