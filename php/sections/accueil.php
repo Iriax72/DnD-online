@@ -3,9 +3,11 @@ require './php/head.php';
 require "./html/header.html";
 ?>
 
-<section id="accueil">
-    <h2>Accueil</h2>
-</section>
+<main>
+    <section id="accueil">
+        <h2>Accueil</h2>
+    </section>
+</main>
 
 <?php
 require './php/footer.php';

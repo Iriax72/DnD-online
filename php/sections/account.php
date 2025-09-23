@@ -3,9 +3,11 @@ require './php/head.php';
 require './html/header.html';
 ?>
 
-<section id="account" class="hidden">
-    <h2>Compte</h2>
-</section>
+<main>
+    <section id="account" class="hidden">
+        <h2>Compte</h2>
+    </section>
+</main>
 
 <?php
 require './php.footer.php';
