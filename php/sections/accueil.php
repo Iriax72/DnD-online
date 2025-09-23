@@ -2,7 +2,7 @@
 <html lang="fr">
 <?php
 echo getcwd();
-require __DIR__ . '/../php/head.php';
+require __DIR__ . '/../head.php';
 require __DIR__ . '/.../html/header.html';
 ?>
 
