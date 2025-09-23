@@ -4,8 +4,6 @@ const nav = document.querySelector("nav");
 
 const nav_button = document.querySelector("#nav_button");
 let isHamburgerOpend = false
-const nav_buttons = [...document.querySelectorAll("header nav ul li a[data-section]")];
-const sections = [...document.querySelector("main").children];
 
 const elementsQuitNav = [...document.querySelectorAll(".clickToQuitNav")]
 
