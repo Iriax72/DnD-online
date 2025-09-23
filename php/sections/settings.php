@@ -6,7 +6,7 @@ require __DIR__ . '/../../html/header.html';
 ?>
 
 <main>
-    <section id="settings" class="hidden">
+    <section id="settings">
         <h2>Réglages</h2>
     </section>
 </main>

@@ -6,7 +6,7 @@ require __DIR__ . '/../../html/header.html';
 ?>
 
 <main>
-    <section id="play" class="hidden">
+    <section id="play">
         <h2>Jouer</h2>
     </section>
 </main>
