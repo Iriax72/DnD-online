@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-require '/php/head.php';
-require "/html/header.html";
+require './head.php';
+require "../html/header.html";
 ?>
 
 <main>
@@ -12,6 +12,6 @@ require "/html/header.html";
 </main>
 
 <?php
-require '/php/footer.php';
+require './footer.php';
 ?>
 </html>
