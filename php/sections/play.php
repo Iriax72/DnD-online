@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="fr">
 <?php
 require './php/head.php';
 require './html/header.html';
@@ -12,3 +14,4 @@ require './html/header.html';
 <?php
 require './php/footer.php';
 ?>
+</html>
