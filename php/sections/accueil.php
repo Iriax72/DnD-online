@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-require '../head.php';
-require ".../html/header.html";
+echo getcwd();
+require '/php/head.php';
+require '.../html/header.html';
 ?>
 
 <main>
