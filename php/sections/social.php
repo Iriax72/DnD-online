@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-require '../head.php';
-require '.../html/header.html';
+require __DIR__ . '/../head.php';
+require __DIR__ . '/../../html/header.html';
 ?>
 
 <main>
@@ -12,6 +12,6 @@ require '.../html/header.html';
 </main>
 
 <?php
-require '../footer.php';
+require __DIR__ . '/../footer.php';
 ?>
 </html>
