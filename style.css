@@ -51,7 +51,7 @@ header nav{
     padding: 4px;
 }
 
-header div{
+header span{
     grid-area: button;
     background-color: orange;
     max-height: 46px;
@@ -59,7 +59,7 @@ header div{
     padding: 0;
 }
 
-header div button{
+header span button{
     background-color: #606060;
     max-height: 40px;
     width: auto;
@@ -70,7 +70,7 @@ header div button{
     padding: 0;
 }
 
-header div button img{
+header span button img{
     width: auto;
     max-height: 40px;
     object-fit: contain;
