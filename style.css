@@ -55,7 +55,7 @@ header span{
     grid-area: button;
     background-color: orange;
     max-height: 46px;
-    width: 100%;
+    max-width: 46px;
     padding: 0;
 }
 
