@@ -1,3 +1,4 @@
 <?php
-require './php/sections/accueil.php'
+$page = $_GET['page'] ?? 'accueil';
+require "./php/sections/$page.php"
 ?>
