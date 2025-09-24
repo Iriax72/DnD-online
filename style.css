@@ -30,10 +30,12 @@ header{
     grid-template-areas: 
     "title button"
     "nav nav";
+    grid-template-columns: 2fr 1fr;
 }
 
 .header_without_nav{
     grid-template-areas: "title button";
+    grid-template-columns: 2fr 1fr;
 }
 
 header h1{
@@ -54,8 +56,8 @@ header nav{
 header span{
     grid-area: button;
     background-color: orange;
-    max-height: 10px;
-    max-width: 10px;
+    max-height: 100%;
+    max-width: 100%;
     padding: 0;
 }
 
