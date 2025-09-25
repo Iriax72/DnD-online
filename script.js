@@ -5,6 +5,7 @@ const nav = document.querySelector("nav");
 const nav_button = document.querySelector("#nav_button");
 let isHamburgerOpend = false
 
+const elementsOpenNav = [...document.querySelectorAll(".clickToOpenNav")]
 const elementsQuitNav = [...document.querySelectorAll(".clickToQuitNav")]
 
 function toggle_nav(){
@@ -23,8 +24,14 @@ function init(){
 }
 
 init();
-nav_button.onclick = toggle_nav();
 
+elementsOpenNav.forEach(e => {
+    e.onclick = () => {
+        if(!isHamburgerOpend){
+            toggle_nav();
+        }
+    }
+});
 elementsQuitNav.forEach(e => {
     e.onclick = () => {
         if(isHamburgerOpend){
