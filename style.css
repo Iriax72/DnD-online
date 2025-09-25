@@ -9,11 +9,9 @@ body{
 }
 
 header{
-    background-color: lime;
     grid-area: header;
     display: grid;
     margin: 0;
-    padding: 4px;
     grid-template-areas: 
     "l1"
     "l2";
@@ -28,12 +26,17 @@ header{
     align-items: center;
 }
 
+.main-h1{
+    margin: 8px;
+}
+
 #l2{
     background-color: darkorchid;
     grid-area: l2;
     margin: 0;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .nav-container{
