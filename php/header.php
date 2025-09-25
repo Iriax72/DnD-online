@@ -8,6 +8,14 @@ $pageNames = [
     'settings' => 'Réglages'
 ];
 $pageName = $pageNames[$page];
+
+function navButton(string $name):string {
+    echo <<<HTML
+    <li>
+        <a href="/index.php?page=$name>$pageNames[$name]</a>
+    </li>
+HTML;
+}
 ?>
 
 <header class="m-0">
@@ -41,9 +49,7 @@ $pageName = $pageNames[$page];
                 <li>
                     <a href="/index.php?page=social">Social</a>
                 </li>
-                <li>
-                    <a href="/index.php?page=settings">Réglages</a>
-                </li>
+                <?php navButton('settings') ?>
             </ul>
         </nav>
     </div>
