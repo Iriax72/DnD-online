@@ -1,3 +1,15 @@
+<?php
+$pageNames = [
+    'accueil' => 'Accueil',
+    'account' => 'Compte',
+    'play' => 'Jouer',
+    'infos' => 'Infos',
+    'social' => 'Social',
+    'settings' => 'Réglages'
+];
+$pageName = $pageNames[$page];
+?>
+
 <header>
     <div id="l1">
         <h1 class="main-h1">DnD Online</h1>
@@ -6,7 +18,7 @@
         <span>
             <img src="" alt="logo du site">
         </span>
-        <h2><?=$page?></h2>
+        <h2><?=$pageName?></h2>
         <span class="b-span">
             <button id="nav_button">
                 <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="b-img">
