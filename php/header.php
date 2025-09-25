@@ -35,21 +35,11 @@ HTML;
         </span>
         <nav id="nav" class="nav-container">
             <ul class="m-0 p-0">
-                <li>
-                    <a href="/index.php?page=accueil">Accueil</a>
-                </li>
-                <li>
-                    <a href="/index.php?page=account">Compte</a>
-                </li>
-                <li>
-                    <a href="/index.php?page=play">Jouer</a>
-                </li>
-                <li>
-                    <a href="/index.php?page=infos">Infos</a>
-                </li>
-                <li>
-                    <a href="/index.php?page=social">Social</a>
-                </li>
+                <?= navButton('accueil', $pageNames) ?>
+                <?= navButton('account', $pageNames) ?>
+                <?= navButton('play', $pageNames) ?>
+                <?= navButton('infos', $pageNames) ?>
+                <?= navButton('social', $pageNames) ?>
                 <?= navButton('settings', $pageNames) ?>
             </ul>
         </nav>
