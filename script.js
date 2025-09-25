@@ -35,7 +35,7 @@ function toggle_nav(){
 
 function init(){
     isHamburgerOpend = false;
-    nav.classList.add("hidden");
+    //nav.classList.add("hidden");
     adjust_body_grid();
 }
 
