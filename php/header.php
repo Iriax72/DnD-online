@@ -19,15 +19,15 @@ HTML;
 }
 ?>
 
-<header class="m-0 clickToQuitNav">
-    <div id="l1" class="m-0">
+<header class="m-0">
+    <div id="l1" class="m-0 clickToQuitNav">
         <h1 class="main-h1">DnD Online</h1>
     </div>
     <div id="l2" class="m-0">
-        <span class="l2-span p-0">
+        <span class="l2-span p-0 clickToQuitNav">
             <img src="" alt="logo du site">
         </span>
-        <h2 class="">
+        <h2 class="clickToQuitNav">
             <?=$pageName?>
         </h2>
         <span class="l2-span p-0">
