@@ -63,7 +63,7 @@ header span{
 
 header span button{
     background-color: #606060;
-    max-height: 44px;
+    height: 44px;
     width: 44px;
     display: flex;
     justify-content: center;
