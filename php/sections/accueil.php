@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-echo getcwd();
-require __DIR__ . '/../head.php';
-require __DIR__ . '/../header.php';
+require __DIR__ . '/../head.php'; 
 ?>
 
-<main>
-    <section id="accueil">
-        <h2>Accueil</h2>
-    </section>
-</main>
+<body class="p-0">
+    <?php
+    require __DIR__ . '/../header.php';
+    ?>
 
-<?php
-require __DIR__ . '/../footer.php';
-?>
+    <main>
+        <section id="accueil">
+            <h2>Accueil</h2>
+        </section>
+    </main>
+    
+    <?php
+    require __DIR__ . '/../footer.php';
+    ?>
+</body>
 </html>

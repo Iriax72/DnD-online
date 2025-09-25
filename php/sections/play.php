@@ -2,16 +2,21 @@
 <html lang="fr">
 <?php
 require __DIR__ . '/../head.php';
-require __DIR__ . '/../header.php';
 ?>
 
-<main>
-    <section id="play">
-        <h2>Jouer</h2>
-    </section>
-</main>
-
-<?php
-require __DIR__ . '/../footer.php';
-?>
+<body class="p-0">
+    <?php
+    require __DIR__ . '/../header.php';
+    ?>
+    
+    <main>
+        <section id="play">
+            <h2>Jouer</h2>
+        </section>
+    </main>
+    
+    <?php
+    require __DIR__ . '/../footer.php';
+    ?>
+</body>
 </html>

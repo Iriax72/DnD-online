@@ -1,7 +1,6 @@
 body{
     background-color: #252525;
     display: grid;
-    padding: 0;
     grid-template-areas:
     "header"
     "main"
@@ -11,7 +10,6 @@ body{
 header{
     grid-area: header;
     display: grid;
-    margin: 0;
     grid-template-areas: 
     "l1"
     "l2";
@@ -20,7 +18,6 @@ header{
 #l1{
     background-color: yellow;
     grid-area: l1;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,9 +30,8 @@ header{
 #l2{
     background-color: darkorchid;
     grid-area: l2;
-    margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -51,7 +47,6 @@ header{
     background-color: orange;
     height: 44px;
     width: 44px;
-    padding: 0;
 }
 
 #nav_button{
@@ -61,8 +56,6 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 .b-img{
@@ -73,8 +66,6 @@ header{
 
 header nav ul{
     list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
 
 header nav ul li{
@@ -87,12 +78,19 @@ header nav ul li{
 main{
     grid-area: main;
     background-color: #aaaaaa;
-    margin: 0;
 }
 
 main section{
     background-color: chartreuse;
     padding: 4px;
+}
+
+.m-0{
+    margin: 0;
+}
+
+.p-0{
+    padding: 0;
 }
 
 .hidden{
@@ -106,6 +104,5 @@ main section h2{
 footer{
     background-color: yellow;
     grid-area: footer;
-    margin: 0;
     padding: 8px;
 }
