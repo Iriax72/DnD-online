@@ -6,7 +6,7 @@
         <span>
             <img src="" alt="logo du site">
         </span>
-        <h2>! Section !</h2>
+        <h2><?=$page?></h2>
         <span class="b-span">
             <button id="nav_button">
                 <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="b-img">
