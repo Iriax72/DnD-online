@@ -20,6 +20,7 @@ header{
 }
 
 #l1{
+    background-color: yellow;
     grid-area: l1;
     margin: 0;
     display: flex;
@@ -28,6 +29,7 @@ header{
 }
 
 #l2{
+    background-color: darkorchid;
     grid-area: l2;
     margin: 0;
     display: flex;
