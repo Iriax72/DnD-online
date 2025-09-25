@@ -19,11 +19,12 @@ function toggle_nav(){
 
 function init(){
     isHamburgerOpend = false;
-    //nav.classList.add("hidden");
+    nav.classList.add("hidden");
 }
 
 init();
 nav_button.onclick = toggle_nav();
+
 elementsQuitNav.forEach(e => {
     e.onclick = () => {
         if(isHamburgerOpend){

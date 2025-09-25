@@ -9,7 +9,7 @@ require __DIR__ . '/../head.php';
     require __DIR__ . '/../header.php';
     ?>
     
-    <main>
+    <main class="clickToQuitNav">
         <section id="settings">
             <h2>Réglages</h2>
         </section>

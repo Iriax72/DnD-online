@@ -1,4 +1,4 @@
-<footer class="m-0">
+<footer class="m-0 clickToQuitNav">
     <p>Merci d'avoir visité le site!</p>
     <br/>
     <p>Nous contacter: (je mettrai le lien plus tard, rappelez moi si je l'ai oublié svp)</p>

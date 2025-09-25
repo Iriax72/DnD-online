@@ -9,7 +9,7 @@ require __DIR__ . '/../head.php';
     require __DIR__ . '/../header.php';
     ?>
     
-    <main>
+    <main class="clickToQuitNav">
         <section id="social">
             <h2>Social</h2>
         </section>
