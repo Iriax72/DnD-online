@@ -15,11 +15,11 @@ $pageName = $pageNames[$page];
         <h1 class="main-h1">DnD Online</h1>
     </div>
     <div id="l2">
-        <span>
+        <span class="l2-span">
             <img src="" alt="logo du site">
         </span>
         <h2><?=$pageName?></h2>
-        <span class="b-span">
+        <span class="l2-span">
             <button id="nav_button">
                 <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="b-img">
             </button>
