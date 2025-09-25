@@ -2,17 +2,7 @@ body{
     background-color: #252525;
     display: grid;
     padding: 0;
-}
-
-.body_with_nav{
-    grid-template-areas: 
-    "main header"
-    "footer header";
-    grid-template-columns: 1fr 150px;
-}
-
-.body_without_nav{
-    grid-template-areas: 
+    grid-template-areas:
     "header"
     "main"
     "footer";
@@ -24,44 +14,42 @@ header{
     display: grid;
     margin: 0;
     padding: 4px;
-}
-
-.header_with_nav{
     grid-template-areas: 
-    "title button"
-    "nav nav";
-    grid-template-columns: 2fr 1fr;
+    "l1"
+    "l2";
 }
 
-.header_without_nav{
-    grid-template-areas: "title button";
-    grid-template-columns: 2fr 1fr;
-}
-
-header h1{
-    grid-area: title;
+#l1{
+    grid-area: l1;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header nav{
+#l2{
+    grid-area: l2;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-container{
     background-color: aqua;
-    grid-area: nav;
-    height: 100%;
-    max-width: 120px;
+    width: 120px;
     display: flex;
     flex-direction: column;
     padding: 4px;
 }
 
-header span{
-    grid-area: button;
+.b-span{
     background-color: orange;
     height: 44px;
     width: 44px;
     padding: 0;
 }
 
-header span button{
+#nav_button{
     background-color: #606060;
     height: 44px;
     width: 44px;
@@ -72,7 +60,7 @@ header span button{
     padding: 0;
 }
 
-header span button img{
+.b-img{
     width: 44px;
     height: 44px;
     object-fit: contain;
