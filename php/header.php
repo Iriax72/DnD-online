@@ -8,15 +8,6 @@ $pageNames = [
     'settings' => 'Réglages'
 ];
 $pageName = $pageNames[$page];
-
-function navButton(string $name, array $pageNames):string {
-    $label = $pageNames[$name];
-    return <<<HTML
-    <li>
-        <a href="/index.php?page=$name">$label</a>
-    </li>
-HTML;
-}
 ?>
 
 <header class="m-0">
