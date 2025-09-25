@@ -9,7 +9,7 @@ $pageNames = [
 ];
 $pageName = $pageNames[$page];
 
-function navButton(string $name):string {
+function navButton(string $name, array $pageNames):string {
     echo <<<HTML
     <li>
         <a href="/index.php?page=$name>$pageNames[$name]</a>
@@ -49,7 +49,7 @@ HTML;
                 <li>
                     <a href="/index.php?page=social">Social</a>
                 </li>
-                <?php navButton('settings') ?>
+                <?php navButton('settings', $pageNames) ?>
             </ul>
         </nav>
     </div>
