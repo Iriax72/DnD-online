@@ -2,7 +2,7 @@
 <html lang="fr">
 <?php
 require __DIR__ . '/../head.php';
-require __DIR__ . '/../../html/header.html';
+require __DIR__ . '/../header.php';
 ?>
 
 <main>
