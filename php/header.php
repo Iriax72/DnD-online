@@ -35,15 +35,5 @@ HTML;
                 <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="b-img">
             </button>
         </span>
-        <nav id="nav" class="nav-container">
-            <ul class="m-0 p-0">
-                <?= navButton('accueil', $pageNames) ?>
-                <?= navButton('account', $pageNames) ?>
-                <?= navButton('play', $pageNames) ?>
-                <?= navButton('infos', $pageNames) ?>
-                <?= navButton('social', $pageNames) ?>
-                <?= navButton('settings', $pageNames) ?>
-            </ul>
-        </nav>
     </div>
 </header>
