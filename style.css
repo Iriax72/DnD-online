@@ -35,12 +35,6 @@ header{
     align-items: center;
 }
 
-.nav-container{
-    background-color: darkred;
-    position: relative;
-    width: 120px;
-}
-
 .nav{
     background-color: aqua;
     width: 100%;

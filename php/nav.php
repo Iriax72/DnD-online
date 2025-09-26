@@ -8,15 +8,13 @@ HTML;
 }
 ?>
 
-<div class="nav-container">
-    <nav id="nav" class="nav">
-        <ul class="m-0 p-0 ul-no-style">
-            <?= navButton('accueil', 'Accueil');?>
-            <?= navButton('account', 'Compte');?>
-            <?= navButton('play', 'Jouer');?>
-            <?= navButton('infos', 'Infos');?>
-            <?= navButton('social', 'Social');?>
-            <?= navButton('settings', 'Réglages');?>
-        </ul>
-    </nav>
-</div>
+<nav id="nav" class="nav">
+    <ul class="m-0 p-0 ul-no-style">
+        <?= navButton('accueil', 'Accueil');?>
+        <?= navButton('account', 'Compte');?>
+        <?= navButton('play', 'Jouer');?>
+        <?= navButton('infos', 'Infos');?>
+        <?= navButton('social', 'Social');?>
+        <?= navButton('settings', 'Réglages');?>
+    </ul>
+</nav>
