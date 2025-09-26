@@ -16,7 +16,7 @@ $pageName = $pageNames[$page];
     </div>
     <div id="l2" class="m-0 p-0">
         <span class="l2-span p-0 clickToQuitNav">
-            <img src="" alt="logo du site">
+            <img src="/assets/images/logo.png" alt="logo du site">
         </span>
         <h2 class="clickToQuitNav">
             <?=$pageName?>
