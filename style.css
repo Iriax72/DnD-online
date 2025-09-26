@@ -21,6 +21,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50px;
 }
 
 .main-h1{
@@ -28,6 +29,7 @@ header{
 }
 
 #l2{
+    height: 50px;
     background-color: darkorchid;
     grid-area: l2;
     display: flex;
@@ -43,6 +45,7 @@ header{
     flex-direction: column;
     padding: 4px;
     position: absolute;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
 }
