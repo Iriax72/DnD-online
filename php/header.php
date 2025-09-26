@@ -16,14 +16,14 @@ $pageName = $pageNames[$page];
     </div>
     <div id="l2" class="m-0 p-0">
         <span class="l2-span p-0 clickToQuitNav">
-            <img src="/assets/images/logo.png" alt="logo du site">
+            <img src="/assets/images/logo.png" alt="logo du site" class="l2-img">
         </span>
         <h2 class="clickToQuitNav">
             <?=$pageName?>
         </h2>
         <span class="l2-span p-0">
             <button id="nav_button" class="m-0 p-0 clickToOpenNav">
-                <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="b-img">
+                <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="l2-img">
             </button>
         </span>
     </div>
