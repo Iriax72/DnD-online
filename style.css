@@ -45,7 +45,7 @@ header{
     flex-direction: column;
     padding: 4px;
     position: absolute;
-    top: 100px;
+    top: 104px;
     left: 50%;
     transform: translateX(-50%);
 }
