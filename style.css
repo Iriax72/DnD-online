@@ -36,8 +36,14 @@ header{
 }
 
 .nav-container{
-    background-color: aqua;
+    background-color: darkred;
+    position: relative;
     width: 120px;
+}
+
+.nav{
+    background-color: aqua;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -63,6 +69,10 @@ header{
     width: 44px;
     height: 44px;
     object-fit: contain;
+}
+
+#nav{
+    position: absolute;
 }
 
 .ul-no-style{
