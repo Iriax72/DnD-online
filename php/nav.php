@@ -2,7 +2,7 @@
 function navButton(string $page, string $name):string {
     return <<<HTML
     <li class="nav-element">
-        <a href="/index.php?page=$page" class="beautiful-a">$name</a>
+        <a href="/index.php?page=$page" class="beautiful-a t-white">$name</a>
     </li>
 HTML;
 }

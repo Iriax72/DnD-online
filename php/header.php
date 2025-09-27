@@ -12,13 +12,13 @@ $pageName = $pageNames[$page];
 
 <header class="m-0">
     <div id="l1" class="m-0 p-0 clickToQuitNav">
-        <h1 class="main-h1">DnD Online</h1>
+        <h1 class="main-h1 t-white">DnD Online</h1>
     </div>
     <div id="l2" class="m-0 p-0">
         <span class="l2-span p-0 clickToQuitNav">
             <img src="/assets/images/logo.png" alt="logo du site" class="l2-img">
         </span>
-        <h2 class="clickToQuitNav">
+        <h2 class="t-white clickToQuitNav">
             <?=$pageName?>
         </h2>
         <span class="l2-span p-0">

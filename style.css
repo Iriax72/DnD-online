@@ -82,7 +82,7 @@ header{
 
 .beautiful-a{
     text-decoration: none;
-    color: white;
+    color: #efefef;
 }
 
 main{grid-area: main;}
@@ -96,9 +96,13 @@ main section{
 
 .p-0{padding: 0;}
 
+.t-white{
+    color: #efefef;
+}
+
 .hidden{display: none}
 
-main section h2{color: white;}
+main section h2{color: #efefef;}
 
 footer{
     background-color: #171171;
