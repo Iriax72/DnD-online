@@ -8,12 +8,7 @@ function toggle_nav(){
     isHamburgerOpend = !isHamburgerOpend;
 }
 
-function init(){
-    isHamburgerOpend = false;
-    nav.classList.add("hidden");
-}
-
-init();
+toggle_nav();
 
 nav_button.onclick = toggle_nav();
 
