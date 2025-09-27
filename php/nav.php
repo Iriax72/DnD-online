@@ -8,7 +8,7 @@ HTML;
 }
 ?>
 
-<nav id="nav" class="nav">
+<nav id="nav" class="nav hidden">
     <ul class="m-0 p-0 ul-no-style">
         <?= navButton('accueil', 'Accueil');?>
         <?= navButton('account', 'Compte');?>

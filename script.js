@@ -9,8 +9,6 @@ function toggle_nav(){
     isNavOpend = !isNavOpend;
 }
 
-toggle_nav();
-
 nav_button.onclick = () => toggle_nav();
 
 elementsQuitNav.forEach(e => {
