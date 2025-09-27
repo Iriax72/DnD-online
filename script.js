@@ -10,7 +10,7 @@ function toggle_nav(){
 
 toggle_nav();
 
-nav_button.onclick = toggle_nav();
+nav_button.onclick = () => toggle_nav();
 
 elementsQuitNav.forEach(e => {
     e.onclick = () => {
