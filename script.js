@@ -1,19 +1,10 @@
-const body = document.body;
-const header = body.querySelector("header");
 const nav = document.querySelector("nav");
-
 const nav_button = document.querySelector("#nav_button");
 let isHamburgerOpend = false
-
 const elementsQuitNav = [...document.querySelectorAll(".clickToQuitNav")]
 
 function toggle_nav(){
-    if(isHamburgerOpend){
-        nav.classList.add("hidden");
-    }
-    else{
-        nav.classList.remove("hidden");
-    }
+    isHamburgerOpend ? nav.classList.add("hidden") : nav.classList.remove("hidden");
     isHamburgerOpend = !isHamburgerOpend;
 }
 
