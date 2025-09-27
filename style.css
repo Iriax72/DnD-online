@@ -1,5 +1,5 @@
 body{
-    background-color: #252525;
+    background-color: #1515ab;
     display: grid;
     grid-template-areas:
     "header"
@@ -16,7 +16,7 @@ header{
 }
 
 #l1{
-    background-color: yellow;
+    background-color: #40408a;
     grid-area: l1;
     display: flex;
     justify-content: center;
@@ -24,13 +24,11 @@ header{
     height: 50px;
 }
 
-.main-h1{
-    margin: 8px;
-}
+.main-h1{margin: 8px;}
 
 #l2{
     height: 50px;
-    background-color: darkorchid;
+    background-color: #050540;
     grid-area: l2;
     display: flex;
     justify-content: space-around;
@@ -70,9 +68,7 @@ header{
     object-fit: contain;
 }
 
-.ul-no-style{
-    list-style-type: none;
-}
+.ul-no-style{list-style-type: none;}
 
 .nav-element{
     background-color: #252525;
@@ -81,34 +77,25 @@ header{
     margin: 4px;
 }
 
-main{
-    grid-area: main;
-    background-color: #aaaaaa;
-}
+.beautiful-a{text-decoration: none;}
+
+main{grid-area: main;}
 
 main section{
     background-color: chartreuse;
     padding: 4px;
 }
 
-.m-0{
-    margin: 0;
-}
+.m-0{margin: 0;}
 
-.p-0{
-    padding: 0;
-}
+.p-0{padding: 0;}
 
-.hidden{
-    display: none
-}
+.hidden{display: none}
 
-main section h2{
-    color: white;
-}
+main section h2{color: white;}
 
 footer{
-    background-color: yellow;
+    background-color: #611166;
     grid-area: footer;
     padding: 8px;
 }
