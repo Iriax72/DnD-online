@@ -4,7 +4,7 @@ let isHamburgerOpend = false
 const elementsQuitNav = [...document.querySelectorAll(".clickToQuitNav")]
 
 function toggle_nav(){
-    isHamburgerOpend ? nav.classList.add("hidden") : nav.classList.remove("hidden");
+    isHamburgerOpend ? nav.classList.remove("hidden") : nav.classList.add("hidden");
     isHamburgerOpend = !isHamburgerOpend;
 }
 
