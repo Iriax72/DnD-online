@@ -46,8 +46,7 @@ header{
     padding: 4px;
     position: absolute;
     top: 108px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
 }
 
 .l2-span{
