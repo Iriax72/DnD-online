@@ -1,7 +1,7 @@
 <footer class="m-0 clickToQuitNav">
     <span id="up-btn" class="span p-0 m-0">
         <a href="#l1" class="img-container m-0 p-0">
-            <img src="../../assets/images/up-img.png" alt="image de flèche qui pointe vers le haut" class="up-img m-0 p-0">
+            <img src="../../assets/images/up-img.png" alt="image de flèche qui pointe vers le haut" class="img m-0 p-0">
         </a>
     </span>
     <div>
