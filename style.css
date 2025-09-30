@@ -111,11 +111,11 @@ footer{
 }
 
 .p-footer{
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 }
 
 #up-btn{
     position: absolute;
-    bottom: 120px;
+    bottom: 72px;
     right: 25px;
 }
