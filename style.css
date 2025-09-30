@@ -85,7 +85,10 @@ header{
     color: #efefef;
 }
 
-main{grid-area: main;}
+main{
+    grid-area: main;
+    min-height: 400px;
+}
 
 main section{
     background-color: chartreuse;
