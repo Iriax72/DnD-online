@@ -47,13 +47,13 @@ header{
     right: 0;
 }
 
-.l2-span{
+.span{
     background-color: orange;
     height: 44px;
     width: 44px;
 }
 
-#nav_button{
+.img-container{
     background-color: #606060;
     height: 44px;
     width: 44px;
@@ -62,7 +62,7 @@ header{
     align-items: center;
 }
 
-.l2-img{
+.img{
     width: 44px;
     height: 44px;
     object-fit: contain;
@@ -108,4 +108,14 @@ footer{
     background-color: #171171;
     grid-area: footer;
     padding: 8px;
+}
+
+.p-footer{
+    font-size: 1.5rem;
+}
+
+#up-btn{
+    position: absolute;
+    bottom: 120px;
+    right: 25px;
 }

@@ -15,15 +15,15 @@ $pageName = $pageNames[$page];
         <h1 class="main-h1 t-white">DnD Online</h1>
     </div>
     <div id="l2" class="m-0 p-0">
-        <span class="l2-span p-0 clickToQuitNav">
-            <img src="/assets/images/logo.png" alt="logo du site" class="l2-img">
+        <span class="span p-0 clickToQuitNav">
+            <img src="/assets/images/logo.png" alt="logo du site" class="img">
         </span>
         <h2 class="t-white clickToQuitNav">
             <?=$pageName?>
         </h2>
-        <span class="l2-span p-0">
-            <button id="nav_button" class="m-0 p-0">
-                <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="l2-img">
+        <span class="span p-0">
+            <button id="nav_button" class=" img-container m-0 p-0">
+                <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="img">
             </button>
         </span>
     </div>
