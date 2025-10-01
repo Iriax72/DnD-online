@@ -3,7 +3,7 @@ let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_form = document.querySelector("#login-form");
 
-debugbtn.innerText = login_buttons.outerHTML;
+debugbtn.innerText = login_buttons.length;
 
 let isCreateAccountOpend = false;
 const signin_buttons = [...document.querySelectorAll(".b-signin")];
