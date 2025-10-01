@@ -10,18 +10,18 @@ const cross_buttons = [...document.querySelectorAll(".close-pop")];
 
 function toggle_login(){
     if(isLoginOpend){
-        login_form.classList.remove("hidden");
-    } else {
         login_form.classList.add("hidden");
+    } else {
+        login_form.classList.remove("hidden");
     }
     isLoginOpend = !isLoginOpend;
 };
 
 function toggle_signin(){
     if(isCreateAccountOpend){
-        signin_form.classList.remove("hidden");
-    } else {
         signin_form.classList.add("hidden");
+    } else {
+        signin_form.classList.remove("hidden");
     }
     isCreateAccountOpend = !isCreateAccountOpend;
 };
