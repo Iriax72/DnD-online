@@ -1,5 +1,3 @@
-<?php session_start() ?>
-
 <section id="accueil">
     <h2>Accueil</h2>
     <?php if($_SESSION['connected']): ?>
