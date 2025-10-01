@@ -8,7 +8,7 @@
             <p>Connectez-vous pour accéder à toutes les fonctionnalités.</p>
             <button class="b-login">Se connecter</button>
             <p>Vous n'avez pas encore de compte?</p>
-            <button class="b-create-account">Créer un compte</button>
+            <button class="b-signin">Créer un compte</button>
         </div>
     <?php endif; ?>
 </section>
