@@ -13,7 +13,11 @@ $page = $_GET['page'] ?? 'accueil';
         require __DIR__ . '/php/nav.php';
         ?>
         <main class="clickToQuitNav">
-            <?php require __DIR__ . "/php/sections/$page.php"; ?>
+            <?php 
+            require __DIR__ . '/php/login.php';
+            require __DIR__ . '/php/create_account.php';
+            require __DIR__ . "/php/sections/$page.php"; 
+            ?>
         </main>
         <?php
         require __DIR__ . '/php/footer.php';

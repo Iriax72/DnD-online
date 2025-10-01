@@ -21,7 +21,7 @@ $pageName = $pageNames[$page];
         <h2 class="t-white clickToQuitNav">
             <?=$pageName?>
         </h2>
-        <span class="span p-0">
+        <span class="span m-0 p-0">
             <button id="nav_button" class=" img-container m-0 p-0">
                 <img src="../assets/images/hamburger-picture.jpeg" alt="boutton d'ouverture du memu" class="img">
             </button>
