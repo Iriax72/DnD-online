@@ -5,7 +5,7 @@
         </button>
     </span>
     <form action="" class="form">
-        <p>Connexion</p>
+        <h2>Connexion</h2>
         <label for="pseudo">Pseudo:</label>
         <input type="text" id="pseudo" name="pseudo">
         <br/>
