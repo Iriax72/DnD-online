@@ -1,4 +1,3 @@
-const debugbtn = document.querySelector("#debug");
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_form = document.querySelector("#login-form");
@@ -34,8 +33,6 @@ login_buttons.forEach(b => {
         }
     };
 });
-
-debugbtn.innerHTML = login_buttons[0].onclick;
 
 signin_buttons.forEach(b => {
     b.onclick = () => {
