@@ -1,4 +1,4 @@
-/*let isLoginOpend = false;
+let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_form = document.querySelector("#login-form");
 
@@ -51,4 +51,3 @@ cross_buttons.forEach(b => {
         }
     };
 });
-*/

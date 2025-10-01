@@ -101,7 +101,9 @@ main section{
     color: #efefef;
 }
 
-.hidden{display: none}
+.hidden{
+    display: none !important;
+}
 
 main section h2{color: #efefef;}
 
