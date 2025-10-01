@@ -6,9 +6,9 @@
         <div class="element">
             <p>Bienvenue sur DnD Online !</p>
             <p>Connectez-vous pour accéder à toutes les fonctionnalités.</p>
-            <button class="b-login">Se connecter</button>
+            <button class="b-login nice-btn">Se connecter</button>
             <p>Vous n'avez pas encore de compte?</p>
-            <button class="b-signin">Créer un compte</button>
+            <button class="b-signin nice-btn">Créer un compte</button>
         </div>
     <?php endif; ?>
 </section>
