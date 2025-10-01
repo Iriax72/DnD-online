@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION['connected'] = $_SESSION['connected'] ?? false;
 $page = $_GET['page'] ?? 'accueil';
 ?>
 

@@ -120,3 +120,12 @@ footer{
     bottom: 150px;
     right: 25px;
 }
+
+.element{
+    margin: 6px;
+    padding: 6px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
