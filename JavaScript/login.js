@@ -41,6 +41,7 @@ function toggle_login(){
         login_pop.classList.remove("hidden");
     }
     isLoginOpend = !isLoginOpend;
+    clear_missing_value(login_form);
 };
 
 function toggle_signin(){
@@ -50,18 +51,30 @@ function toggle_signin(){
         signin_pop.classList.remove("hidden");
     }
     isCreateAccountOpend = !isCreateAccountOpend;
+    clear_missing_value(signin_form);
 };
 
 function verify_no_empty(form, values, event){
     Object.keys(values).forEach(v => {
         if(values[v] === ""){
             event.preventDefault();
-            form.querySelector(`#${v}_label`).classList.add("missing-value");
+            form.querySelector(`#${v}_label`).classList.add("missing-value-label");
             form.querySelector(`#${v}`).classList.add("missing-value");
         }
         debug.innerHTML += values[v] + '\n';
     })
 };
+
+function clear_missing_value(form){
+    const labels = [...form.querySelectorAll("label")];
+    const inputs = [...form.querySelectorAll("input")];
+    labels.forEach(l => {
+        l.classList.remove("missing-value-label");
+    });
+    inputs.forEach(i => {
+        i.classList.remove("missing-value");
+    });
+}
 
 login_buttons.forEach(b => {
     b.onclick = () => {
@@ -90,10 +103,12 @@ cross_buttons.forEach(b => {
 });
 
 login_form.addEventListener('submit', (event) => {
+    clear_missing_value(login_form);
     verify_no_empty(login_form, login_values, event);
     }
 );
 
 signin_form.addEventListener('submit', (event) => {
+    clear_missing_value(signin_form);
     verify_no_empty(signin_form, signin_values, event);
 });

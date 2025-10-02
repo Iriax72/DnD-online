@@ -182,3 +182,7 @@ footer{
 .missing-value{
     border: 2px solid red;
 }
+
+.missing-value-label{
+    color: red;
+}
