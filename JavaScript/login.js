@@ -51,3 +51,11 @@ cross_buttons.forEach(b => {
         }
     };
 });
+
+login_form.addEventListener('submit', (event) => {
+
+});
+
+signin_form.addEventListener('submit', (event) => {
+
+});

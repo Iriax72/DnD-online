@@ -8,13 +8,13 @@
         <h2>Créer un compte</h2>
         <p>Nésséssaire:</p>
         <label for="pseudo">Pseudo</label>
-        <input type="text" id="pseudo" name="pseudo">
+        <input type="text" id="pseudo" name="pseudo" required>
         <br/>
         <label for="password">Mot de passe</label>
-        <input type="text" id="password" name="password">
+        <input type="text" id="password" name="password" required>
         <br/>
         <label for="confirm-password">Confirmer le mot de passe</label>
-        <input type="text" id="confirm-password" name="confirm-password">
+        <input type="text" id="confirm-password" name="confirm-password" required>
         <p>Facultatif:</p>
         <label for="email">Email de récupération</label>
         <input type="text" id="email" name="email">
