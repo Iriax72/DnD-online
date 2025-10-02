@@ -180,9 +180,9 @@ footer{
 }
 
 .missing-value{
-    border: 2px solid red;
+    border: 2px solid red !important;
 }
 
 .missing-value-label{
-    color: red;
+    color: red !important;
 }

@@ -1,5 +1,3 @@
-const debug = document.querySelector("#debug");
-
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_pop = document.querySelector("#login_pop");
@@ -61,8 +59,7 @@ function verify_no_empty(form, values, event){
             form.querySelector(`#${v}_label`).classList.add("missing-value-label");
             form.querySelector(`#${v}`).classList.add("missing-value");
         }
-        debug.innerHTML += values[v] + '\n';
-    })
+    }); 
 };
 
 function clear_missing_value(form){
