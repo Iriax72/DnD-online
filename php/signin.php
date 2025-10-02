@@ -4,7 +4,7 @@
             <img src="../assets/images/cross.jpeg" alt="image de croix" class="img">
         </button>
     </span>
-    <form action="" class="form">
+    <form action="post" class="form">
         <h2>Créer un compte</h2>
         <p>Nésséssaire:</p>
         <label for="pseudo">Pseudo</label>
