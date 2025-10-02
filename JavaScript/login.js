@@ -1,10 +1,32 @@
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_form = document.querySelector("#login-form");
+const login_values = {
+    get pseudo(){
+        return login_form.querySelector("#pseudo").value;
+    },
+    get password(){
+        return login_form.querySelector("#password").value;
+    }
+};
 
 let isCreateAccountOpend = false;
 const signin_buttons = [...document.querySelectorAll(".b-signin")];
 const signin_form = document.querySelector("#signin-form");
+const signin_values = {
+    get new_pseudo(){
+        return signin_form.querySelector("#new_pseudo").value;
+    },
+    get new_password(){
+        return signin_form.querySelector("#new_password").value;
+    },
+    get confirm_new_password(){
+        return signin_form.querySelector("#confirm_new_password").value;
+    },
+    get new_email(){
+        return signin_form.querySelector("#new_email").value;
+    }
+};
 
 const cross_buttons = [...document.querySelectorAll(".close-pop")];
 
@@ -24,6 +46,16 @@ function toggle_signin(){
         signin_form.classList.remove("hidden");
     }
     isCreateAccountOpend = !isCreateAccountOpend;
+};
+
+function verify_no_empty(form, values, event){
+    values.forEach(v => {
+        if(values[v] === ""){
+            event.preventDefault();
+            form.querySelector(`#${v}_label`).classList.add("missing-value");
+            form.querySelector(`#${v}`).classList.add("missing-value");
+        }
+    })
 };
 
 login_buttons.forEach(b => {
@@ -53,9 +85,10 @@ cross_buttons.forEach(b => {
 });
 
 login_form.addEventListener('submit', (event) => {
-
-});
+    verify_no_empty(login_form, login_values, event);
+    }
+);
 
 signin_form.addEventListener('submit', (event) => {
-
+    verify_no_empty(signin_form, signin_values, event);
 });

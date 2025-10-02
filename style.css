@@ -174,3 +174,11 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+
+.form input{
+    font-size: 1rem;
+}
+
+.missing-value{
+    border: 2px solid red;
+}

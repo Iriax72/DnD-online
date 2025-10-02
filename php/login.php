@@ -7,10 +7,10 @@
     <form method="post" class="form">
         <h2>Connexion</h2>
         <label for="pseudo">Pseudo:</label>
-        <input type="text" id="pseudo" name="pseudo" required>
+        <input type="text" id="pseudo" name="pseudo">
         <br/>
         <label for="password">Mot de passe:</label>
-        <input type="text" id="password" name="password" required>
+        <input type="text" id="password" name="password">
         <br/>
         <button type="submit" class="nice-btn">Se connecter</button>
     </form>

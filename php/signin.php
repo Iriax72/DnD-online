@@ -7,17 +7,17 @@
     <form method="post" class="form">
         <h2>Créer un compte</h2>
         <p>Nésséssaire:</p>
-        <label for="pseudo">Pseudo</label>
-        <input type="text" id="pseudo" name="pseudo" required>
+        <label for="new_pseudo">Pseudo</label>
+        <input type="text" id="new_pseudo" name="new_pseudo">
         <br/>
-        <label for="password">Mot de passe</label>
-        <input type="text" id="password" name="password" required>
+        <label for="new_password">Mot de passe</label>
+        <input type="text" id="new_password" name="new_password">
         <br/>
-        <label for="confirm-password">Confirmer le mot de passe</label>
-        <input type="text" id="confirm-password" name="confirm-password" required>
+        <label for="confirm_new_password">Confirmer le mot de passe</label>
+        <input type="text" id="confirm_new_password" name="confirm_new_password">
         <p>Facultatif:</p>
-        <label for="email">Email de récupération</label>
-        <input type="text" id="email" name="email">
+        <label for="new_email">Email de récupération</label>
+        <input type="text" id="new_email" name="new_email">
         <br/>
         <button type="submit" class="nice-btn">Créer le compte</button>
     </form>
