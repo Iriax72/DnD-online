@@ -11,5 +11,6 @@
         <br/>
         <label for="password">Mot de passe:</label>
         <input type="text" id="password" name="password">
+        <button type="submit" class="nice-btn">Se connecter</button>
     </form>
 </div>

@@ -18,5 +18,6 @@
         <p>Facultatif:</p>
         <label for="email">Email de récupération</label>
         <input type="text" id="email" name="email">
+        <button type="submit" class="nice-btn">Créer le compte</button>
     </form>
 </div>
