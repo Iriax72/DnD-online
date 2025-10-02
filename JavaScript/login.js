@@ -53,7 +53,7 @@ function toggle_signin(){
 };
 
 function verify_no_empty(form, values, event){
-    values.forEach(v => {
+    Object.keys(values).forEach(v => {
         if(values[v] === ""){
             event.preventDefault();
             form.querySelector(`#${v}_label`).classList.add("missing-value");
