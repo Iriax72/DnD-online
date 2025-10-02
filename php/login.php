@@ -6,10 +6,10 @@
     </span>
     <form id="login_form" method="post" class="form">
         <h2>Connexion</h2>
-        <label for="pseudo">Pseudo:</label>
+        <label for="pseudo" id="pseudo_label>Pseudo:</label>
         <input type="text" id="pseudo" name="pseudo">
         <br/>
-        <label for="password">Mot de passe:</label>
+        <label for="password" id="password_label">Mot de passe:</label>
         <input type="text" id="password" name="password">
         <br/>
         <button type="submit" class="nice-btn">Se connecter</button>
