@@ -1,5 +1,6 @@
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
+const login_pop = document.querySelector("#login_pop");
 const login_form = document.querySelector("#login_form");
 const login_values = {
     get pseudo(){
@@ -12,6 +13,7 @@ const login_values = {
 
 let isCreateAccountOpend = false;
 const signin_buttons = [...document.querySelectorAll(".b-signin")];
+const signin_pop = document.querySelector("#signin_pop");
 const signin_form = document.querySelector("#signin_form");
 const signin_values = {
     get new_pseudo(){
@@ -32,18 +34,18 @@ const cross_buttons = [...document.querySelectorAll(".close-pop")];
 
 function toggle_login(){
     if(isLoginOpend){
-        login_form.classList.add("hidden");
+        login_pop.classList.add("hidden");
     } else {
-        login_form.classList.remove("hidden");
+        login_pop.classList.remove("hidden");
     }
     isLoginOpend = !isLoginOpend;
 };
 
 function toggle_signin(){
     if(isCreateAccountOpend){
-        signin_form.classList.add("hidden");
+        signin_pop.classList.add("hidden");
     } else {
-        signin_form.classList.remove("hidden");
+        signin_pop.classList.remove("hidden");
     }
     isCreateAccountOpend = !isCreateAccountOpend;
 };
