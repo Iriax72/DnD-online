@@ -1,6 +1,6 @@
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
-const login_form = document.querySelector("#login-form");
+const login_form = document.querySelector("#login_form");
 const login_values = {
     get pseudo(){
         return login_form.querySelector("#pseudo").value;
@@ -12,7 +12,7 @@ const login_values = {
 
 let isCreateAccountOpend = false;
 const signin_buttons = [...document.querySelectorAll(".b-signin")];
-const signin_form = document.querySelector("#signin-form");
+const signin_form = document.querySelector("#signin_form");
 const signin_values = {
     get new_pseudo(){
         return signin_form.querySelector("#new_pseudo").value;
