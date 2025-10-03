@@ -17,7 +17,7 @@
         <input type="text" id="confirm_new_password" name="confirm_new_password">
         <p>Facultatif:</p>
         <label for="new_email" id="new_email_label">Email de récupération</label>
-        <input type="text" id="new_email" name="new_email">
+        <input type="text" id="new_email" name="new_email" data-optional="true">
         <br/>
         <button type="submit" class="nice-btn">Créer le compte</button>
     </form>
