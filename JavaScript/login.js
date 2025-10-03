@@ -65,10 +65,10 @@ function verify_no_empty(form, values, event){
         }
     }); 
     if(has_empty){
-        debug.innerHTML ="preventDefault ok";
+        debug.innerHTML += "preventDefault ok";
         event.preventDefault();
     } else {
-        debug.innerHTML = "no pD()";
+        debug.innerHTML += "no pD()";
     }
 };
 
@@ -110,6 +110,7 @@ cross_buttons.forEach(b => {
 });
 
 login_form.addEventListener('submit', (event) => {
+    debug.innerHTML += 'submit';
     clear_missing_value(login_form);
     verify_no_empty(login_form, login_values, event);
     }
