@@ -55,8 +55,8 @@ function toggle_signin(){
 function verify_no_empty(form, values, event){
     has_empty = false;
     inputs = [...form.querySelectorAll("input")];
-    Object.keys(values).forEach(v => {
-        if(values[v] === "" && (inputs[v].dataset.optional ? false:true)){
+    inputs.forEach(input => {
+        if(!input.dataset.optional && input.value === ""){
             has_empty = true;
             form.querySelector(`#${v}_label`).classList.add("missing-value-label");
             form.querySelector(`#${v}`).classList.add("missing-value");
