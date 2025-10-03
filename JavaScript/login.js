@@ -62,7 +62,9 @@ function verify_no_empty(form, event) {
             form.querySelector(`#${input.id}`).classList.add("missing-value");
         }
     });
-    has_empty ? event.preventDefault() : null;
+    if (has_empty) {
+        event.preventDefault()
+    };
 };
 
 function clear_missing_value(form) {
