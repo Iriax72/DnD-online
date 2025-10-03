@@ -4,7 +4,7 @@ const nav_button = document.querySelector("#nav_button");
 let isNavOpend = false;
 const elementsQuitNav = [...document.querySelectorAll(".clickToqQuitNav")];
 
-function toggle_nav(){
+function toggle_nav() {
     isNavOpend ? nav.classList.add("hidden") : nav.classList.remove("hidden");
     isNavOpend = !isNavOpend;
 }
@@ -13,7 +13,7 @@ nav_button.onclick = () => toggle_nav();
 
 elementsQuitNav.forEach(e => {
     e.onclick = () => {
-        if(isNavOpend){
+        if (isNavOpend) {
             toggle_nav();
         }
     }

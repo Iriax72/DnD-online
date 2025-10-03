@@ -1,7 +1,5 @@
 <section id="accueil">
     <h2>Accueil</h2>
-    <p>Debug</p>
-    <p id="debug"></p>
     <?php if($_SESSION['connected']): ?>
         taratadam
     <?php else: ?>

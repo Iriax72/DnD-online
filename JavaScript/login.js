@@ -32,8 +32,6 @@ const signin_values = {
 
 const cross_buttons = [...document.querySelectorAll(".close-pop")];
 
-const debug = document.querySelector("#debug");
-
 function toggle_login() {
     if (isLoginOpend) {
         login_pop.classList.add("hidden");
@@ -63,16 +61,11 @@ function verify_no_empty(form, event) {
             form.querySelector(`#${input.id}_label`).classList.add("missing-value-label");
             form.querySelector(`#${input.id}`).classList.add("missing-value");
         }
-    }); 
-    if(has_empty){
-        debug.innerHTML += "preventDefault ok";
-        event.preventDefault();
-    } else {
-        debug.innerHTML += "no pD()";
-    }
+    });
+    has_empty ? event.preventDefault() : null;
 };
 
-function clear_missing_value(form){
+function clear_missing_value(form) {
     const labels = [...form.querySelectorAll("label")];
     const inputs = [...form.querySelectorAll("input")];
     labels.forEach(l => {
@@ -83,9 +76,16 @@ function clear_missing_value(form){
     });
 }
 
+function intercept_submit(form) {
+    form.addEventListener("submit", (event) => {
+        clear_missing_value(form);
+        verify_no_empty(form, event);
+    });
+}
+
 login_buttons.forEach(b => {
     b.onclick = () => {
-        if(!isLoginOpend){
+        if (!isLoginOpend) {
             toggle_login();
         }
     };
@@ -93,7 +93,7 @@ login_buttons.forEach(b => {
 
 signin_buttons.forEach(b => {
     b.onclick = () => {
-        if(!isCreateAccountOpend){
+        if (!isCreateAccountOpend) {
             toggle_signin();
         }
     };
@@ -101,21 +101,13 @@ signin_buttons.forEach(b => {
 
 cross_buttons.forEach(b => {
     b.onclick = () => {
-        if(isLoginOpend){
+        if (isLoginOpend) {
             toggle_login();
-        } else if(isCreateAccountOpend){
+        } else if (isCreateAccountOpend) {
             toggle_signin();
         }
     };
 });
 
-login_form.addEventListener('submit', (event) => {
-    clear_missing_value(login_form);
-    verify_no_empty(login_form, event);
-    }
-);
-
-signin_form.addEventListener('submit', (event) => {
-    clear_missing_value(signin_form);
-    verify_no_empty(signin_form, event);
-});
+intercept_submit(login_form);
+intercept_submit(signin_form);
