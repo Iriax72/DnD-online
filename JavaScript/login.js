@@ -62,9 +62,7 @@ function verify_no_empty(form, event) {
             form.querySelector(`#${input.id}`).classList.add("missing-value");
         }
     });
-    alert('on est arrivé la (65/67)')
     if (has_empty) {
-        alert('preventDefault()');
         event.preventDefault()
     };
 };
