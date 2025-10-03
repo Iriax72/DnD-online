@@ -32,6 +32,8 @@ const signin_values = {
 
 const cross_buttons = [...document.querySelectorAll(".close-pop")];
 
+const debug = document.querySelector("#debug");
+
 function toggle_login(){
     if(isLoginOpend){
         login_pop.classList.add("hidden");
@@ -63,7 +65,10 @@ function verify_no_empty(form, values, event){
         }
     }); 
     if(has_empty){
+        debug.innerHTML ="preventDefault ok";
         event.preventDefault();
+    } else {
+        debug.innerHTML = "no pD()";
     }
 };
 
