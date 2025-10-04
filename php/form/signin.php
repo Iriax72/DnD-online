@@ -6,7 +6,7 @@ echo form('signin', 'Créer un compte');
 <?php
 echo text_input('new_pseudo', 'Pseudo');
 echo text_input('new_password', 'Mot de passe');
-echo text_input('confirm_new_password', 'Confirmer le mot de passe');
+echo text_input('confirm_new_password', 'Confirmer le mot de passe', false, true);
 ?>
 <p>Optionel</p>
 <?php

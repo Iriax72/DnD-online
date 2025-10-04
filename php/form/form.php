@@ -25,14 +25,18 @@ HTML;
     return $html;
 };
 
-function text_input(string $name, string $text, bool $optional =false):string {
+function text_input(string $name, string $text, bool $optional =false, bool $confirm =false):string {
     $optional_attribut = '';
+    $confirm_attribut = '';
     if ($optional) {
         $optional_attribut = ' data-optional="true"';
     }
+    if ($confirm) {
+        $confirm_attribut = ' data-confirm="true"';
+    }
     $html = <<<HTML
 <label for="{$name}" id="{$name}_label">$text</label>
-<input type="text" id="{$name}" name="{$name}"{$optional_attribut}>
+<input type="text" id="{$name}" name="{$name}"{$optional_attribut}{confirm_attribut}>
 <br/>
 HTML;
     return $html;
