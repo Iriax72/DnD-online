@@ -14,8 +14,8 @@ $page = $_GET['page'] ?? 'accueil';
         ?>
         <main class="clickToQuitNav">
             <?php 
-            require __DIR__ . '/php/login.php';
-            require __DIR__ . '/php/signin.php';
+            require __DIR__ . '/php/form/login.php';
+            require __DIR__ . '/php/form/signin.php';
             require __DIR__ . "/php/sections/$page.php"; 
             ?>
         </main>
