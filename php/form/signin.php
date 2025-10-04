@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . './form.php';
+require_once __DIR__ . '/form.php';
 form('signin', 'Créer un compte');
 ?>
 <p>Nécessaire</p>
