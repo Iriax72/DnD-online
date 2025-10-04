@@ -1,6 +1,6 @@
 <section id="account">
     <h2>Compte</h2>
-    <?php if(!$SESSION['connected']): ?>
+    <?php if(!$_SESSION['connected']): ?>
         <p>Vous n'êtes pas encore connecté</p>
         <button class="b-login nice-btn">Se connecter</button>
         <p>Vous n'avez pas encore de compte?</p>
