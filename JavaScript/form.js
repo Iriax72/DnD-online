@@ -42,17 +42,17 @@ function verify_no_empty(form, event) {
     });
     if (has_empty) {
         event.preventDefault()
-        const error_div = form.querySelector(".error-div");
-        error_div.classList.remove("hidden");
-        error_div.querySelector("p").textContent = "Veuillez remplir tous les champs nécessaires.";
+        error_form(form, "Veuillez remplir tous les champs nécessaires.");
     };
 };
 
 function verify_confirm (form, event) {
     const inputs = [...form.querySelectorAll("input")];
+    const password = form.querySelector("#new_password").value;
     inputs.forEach(i => {
-        if (i.id == ) {
-            
+        if (i.dataset.confirm && i.value != password) {
+            event.preventDefault();
+            error_form(form, "Erreur de confirmation du mot de passe");
         }
     });
 }
@@ -75,6 +75,12 @@ function intercept_submit(form) {
         verify_no_empty(form, event);
         verify_confirm(form, event);
     });
+}
+
+function error_form(form, error) {
+    const error_div = form.querySelector(".error-div");
+    error_div.classList.remove("hidden");
+    error_div.querySelector("p").textContent = error;
 }
 
 login_buttons.forEach(b => {
