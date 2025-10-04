@@ -17,7 +17,7 @@ function toggle_login() {
         login_pop.classList.remove("hidden");
     }
     isLoginOpend = !isLoginOpend;
-    clear_missing_value(login_form);
+    clear_error_value(login_form);
 };
 
 function toggle_signin() {
@@ -27,22 +27,22 @@ function toggle_signin() {
         signin_pop.classList.remove("hidden");
     }
     isCreateAccountOpend = !isCreateAccountOpend;
-    clear_missing_value(signin_form);
+    clear_error_value(signin_form);
 };
 
 function verify_no_empty(form, event) {
-    let has_empty = false;
+    let empty = [];
     const inputs = [...form.querySelectorAll("input")];
     inputs.forEach(input => {
         if (!input.dataset.optional && input.value === "") {
-            has_empty = true;
-            form.querySelector(`#${input.id}_label`).classList.add("missing-value-label");
-            form.querySelector(`#${input.id}`).classList.add("missing-value");
+            empty += input;
+            add_error(form, [input]);
         }
     });
-    if (has_empty) {
+    if (empty) {
         event.preventDefault()
         error_form(form, "Veuillez remplir tous les champs nécessaires.");
+        add_error(form, empty);
     };
 };
 
@@ -50,26 +50,36 @@ function verify_confirm (form, event) {
     const password = form.querySelector("#new_password") ?? null;
     const confirmation = form.querySelector("#confirm_new_password") ?? null;
     if (password && confirmation && password.value != confirmation.value) {
+        alert('mdp != confirm');
         event.preventDefault();
-        error_form("Erreur dans la confirmation du mot de passe");
+        add_error(form, [password, confirmation]);
+        error_form(form, "Erreur dans la confirmation du mot de passe");
     }
 }
 
-function clear_missing_value(form) {
+function clear_error_value(form) {
     const labels = [...form.querySelectorAll("label")];
     const inputs = [...form.querySelectorAll("input")];
     labels.forEach(l => {
-        l.classList.remove("missing-value-label");
+        l.classList.remove("error-value-label");
     });
     inputs.forEach(i => {
-        i.classList.remove("missing-value");
+        i.classList.remove("error-value");
     });
     form.querySelector(".error-div").classList.add("hidden");
 }
 
+function add_error(form, inputs) {
+    inputs.forEach(i => {
+        alert('adderror sur', i)
+        i.classList.add("error-value");
+        form.querySelector(`#${i.id}_label`).classList.add("error_value_label");
+    })
+}
+
 function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
-        clear_missing_value(form);
+        clear_error_value(form);
         verify_no_empty(form, event);
         verify_confirm(form, event);
     });

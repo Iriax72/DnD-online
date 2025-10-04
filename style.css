@@ -204,10 +204,10 @@ footer{
     color: red !important;
 }
 
-.missing-value{
+.error-value{
     border: 2px solid red !important;
 }
 
-.missing-value-label{
+.error-value-label{
     color: red !important;
 }
