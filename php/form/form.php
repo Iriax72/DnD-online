@@ -1,7 +1,7 @@
 <?php
 function form(string $form_name, string $title):string {
     $html = <<<HTML
-<div id="{$form}_pop" class="pop-box hidden">
+<div id="{$form_name}_pop" class="pop-box hidden">
     <span class="span cross-span m-0 p-0">
         <button class="img-container close-pop m-0 p-0">
             <img src="/assets/images/cross.jpeg" alt="image de croix" class="img">
