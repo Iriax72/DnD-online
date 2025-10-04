@@ -2,33 +2,11 @@ let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_pop = document.querySelector("#login_pop");
 const login_form = document.querySelector("#login_form");
-const login_values = {
-    get pseudo() {
-        return login_form.querySelector("#pseudo").value;
-    },
-    get password() {
-        return login_form.querySelector("#password").value;
-    }
-};
 
 let isCreateAccountOpend = false;
 const signin_buttons = [...document.querySelectorAll(".b-signin")];
 const signin_pop = document.querySelector("#signin_pop");
 const signin_form = document.querySelector("#signin_form");
-const signin_values = {
-    get new_pseudo() {
-        return signin_form.querySelector("#new_pseudo").value;
-    },
-    get new_password() {
-        return signin_form.querySelector("#new_password").value;
-    },
-    get confirm_new_password() {
-        return signin_form.querySelector("#confirm_new_password").value;
-    },
-    get new_email() {
-        return signin_form.querySelector("#new_email").value;
-    }
-};
 
 const cross_buttons = [...document.querySelectorAll(".close-pop")];
 
@@ -53,8 +31,8 @@ function toggle_signin() {
 };
 
 function verify_no_empty(form, event) {
-    has_empty = false;
-    inputs = [...form.querySelectorAll("input")];
+    let has_empty = false;
+    const inputs = [...form.querySelectorAll("input")];
     inputs.forEach(input => {
         if (!input.dataset.optional && input.value === "") {
             has_empty = true;
@@ -64,11 +42,20 @@ function verify_no_empty(form, event) {
     });
     if (has_empty) {
         event.preventDefault()
-        error_div = form.querySelector(".error-div");
+        const error_div = form.querySelector(".error-div");
         error_div.classList.remove("hidden");
         error_div.querySelector("p").textContent = "Veuillez remplir tous les champs nécessaires.";
     };
 };
+
+function verify_confirm (form, event) {
+    const inputs = [...form.querySelectorAll("input")];
+    inputs.forEach(i => {
+        if (i.id == ) {
+            
+        }
+    });
+}
 
 function clear_missing_value(form) {
     const labels = [...form.querySelectorAll("label")];
@@ -86,6 +73,7 @@ function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         clear_missing_value(form);
         verify_no_empty(form, event);
+        verify_confirm(form, event);
     });
 }
 
