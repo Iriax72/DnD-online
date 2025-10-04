@@ -47,14 +47,12 @@ function verify_no_empty(form, event) {
 };
 
 function verify_confirm (form, event) {
-    const inputs = [...form.querySelectorAll("input")];
-    const password = form.querySelector("#new_password").value;
-    inputs.forEach(i => {
-        if (i.dataset.confirm && i.value != password) {
-            event.preventDefault();
-            error_form(form, "Erreur de confirmation du mot de passe");
-        }
-    });
+    const password = form.querySelector("#new_password").value ?? null;
+    const confirmation = form.querySelector("#confirm_new_password").value ?? null;
+    if (password != confirmation) {
+        event.preventDefault();
+        error_form("Erreur dans la confirmation du mot de passe");
+    }
 }
 
 function clear_missing_value(form) {
