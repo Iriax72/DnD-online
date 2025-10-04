@@ -197,6 +197,9 @@ footer{
 .error-div{
     border: 2px solid red !important;
     background-color: #efefef !important;
+}
+
+.error-div p{
     color: red !important;
 }
 
