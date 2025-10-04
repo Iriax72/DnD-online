@@ -7,6 +7,9 @@ function form(string $form_name, string $title):string {
             <img src="/assets/images/cross.jpeg" alt="image de croix" class="img">
         </button>
     </span>
+    <div class="hidden error-div">
+        <p></p>
+    </div>
     <form id="{$form_name}_form" method="post" class="form">
         <h2>$title</h2>
 HTML;

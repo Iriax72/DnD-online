@@ -194,6 +194,11 @@ footer{
     color: #efefef;
 }
 
+.error-div{
+    background-color: #efefef;
+    color: red;
+}
+
 .missing-value{
     border: 2px solid red !important;
 }
