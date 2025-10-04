@@ -9,8 +9,8 @@ function form(string $form_name, string $title):string {
     </span>
     <form id="{$form_name}_form" method="post" class="form">
         <h2>$title</h2>
-        <div class="hidden error-div">
-            <p></p>
+        <div class="hidden error-div m-0">
+            <p class="m-0"></p>
         </div>
 HTML;
     return $html;
