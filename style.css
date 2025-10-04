@@ -154,7 +154,7 @@ footer{
 .cross-span{
     position: fixed;
     top: 5% + 1px;
-    right: 5% + 1px;
+    right: 0;
     z-index: 11;
 }
 
