@@ -23,9 +23,13 @@ HTML;
 };
 
 function text_input(string $name, string $text, bool $optional =false):string {
+    $optional_attribut = '';
+    if ($optional) {
+        $optional_attribut = ' data-optional="true"';
+    }
     $html = <<<HTML
 <label for="{$name}" id="{$name}_label">$text</label>
-<input type="text" id="{$name}" name="{$name}">
+<input type="text" id="{$name}" name="{$name}"{$optional_attribut}>
 <br/>
 HTML;
     return $html;
