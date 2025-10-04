@@ -64,7 +64,7 @@ function verify_no_empty(form, event) {
     });
     if (has_empty) {
         event.preventDefault()
-        error_div = form.parentElement.querySelector(".error-div");
+        error_div = form.querySelector(".error-div");
         error_div.classList.remove("hidden");
         error_div.querySelector("p").textContent = "Veuillez remplir tous les champs nécessaires.";
     };
@@ -79,7 +79,7 @@ function clear_missing_value(form) {
     inputs.forEach(i => {
         i.classList.remove("missing-value");
     });
-    form.parentElement.querySelector(".error-div").classList.add("hidden");
+    form.querySelector(".error-div").classList.add("hidden");
 }
 
 function intercept_submit(form) {
