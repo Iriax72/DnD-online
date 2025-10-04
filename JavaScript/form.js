@@ -47,9 +47,9 @@ function verify_no_empty(form, event) {
 };
 
 function verify_confirm (form, event) {
-    const password = form.querySelector("#new_password").value ?? null;
-    const confirmation = form.querySelector("#confirm_new_password").value ?? null;
-    if (password != confirmation) {
+    const password = form.querySelector("#new_password") ?? null;
+    const confirmation = form.querySelector("#confirm_new_password") ?? null;
+    if (password && confirmation && password.value != confirmation.value) {
         event.preventDefault();
         error_form("Erreur dans la confirmation du mot de passe");
     }
