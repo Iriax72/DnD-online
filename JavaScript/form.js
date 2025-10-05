@@ -1,3 +1,5 @@
+alert("script chargé");
+
 import * as func from './form_functions.js'
 
 let isLoginOpend = false;
