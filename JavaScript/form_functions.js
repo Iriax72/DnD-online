@@ -5,12 +5,12 @@ export function verify_no_empty(form) {
         if (!input.dataset.optional && input.value === "") {
             empty.push(input);
         }
-        if (empty.length > 0) {
-            add_error(form, empty);
-            return "Veuillez remplire tous les champs nécéssaires.";
-        }
-        return "";
     });
+    if (empty.length > 0) {
+        add_error(form, empty);
+        return "Veuillez remplire tous les champs nécéssaires.";
+    }
+    return "";
 }
 
 function add_error (form, inputs) {
