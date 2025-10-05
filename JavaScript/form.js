@@ -88,6 +88,7 @@ function intercept_submit(form) {
             error.push(confirm);
         }
         error_form(form, event, error[0])
+        alert(error);
     });
 }
 
