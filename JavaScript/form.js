@@ -75,8 +75,7 @@ function add_error(form, inputs) {
     inputs.forEach(i => {
         i.classList.add("error-value");
         const label = form.querySelector(`#${i.id}_label`);
-        alert(label);
-        label.classList.add("error_value_label");
+        label.classList.add("error-value-label");
     })
 }
 
