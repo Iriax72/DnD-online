@@ -85,10 +85,10 @@ function intercept_submit(form) {
 
 function error_form(form, error) {
     const error_div = form.querySelector(".error-div");
-    if(error && "hidden" in error_div.classList){
+    if(error && error_div.classList.contains("hidden")){
         error_div.classList.remove("hidden");
         error_div.querySelector("p").textContent = error;
-    } else if(!"hidden" in error_div.classList) {
+    } else if(!error_div.classList.contains("hidden")) {
         error_div.classList.add("hidden");
         error_div.querySelector("p").textContent = null;
     }
