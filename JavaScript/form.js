@@ -42,9 +42,7 @@ function verify_no_empty(form, event) {
         event.preventDefault()
         error_form(form, "Veuillez remplir tous les champs nécessaires.");
         add_error(form, empty);
-        return true;
     }
-    return false;
 };
 
 function verify_confirm (form, event) {
@@ -54,9 +52,7 @@ function verify_confirm (form, event) {
         event.preventDefault();
         add_error(form, [password, confirmation]);
         error_form(form, "Erreur dans la confirmation du mot de passe");
-        return true;
     }
-    return false
 }
 
 function clear_error_value(form) {
@@ -82,9 +78,8 @@ function add_error(form, inputs) {
 function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         clear_error_value(form);
-        if (!verify_no_empty(form, event)){
-            verify_confirm(form, event);
-        }
+        verify_no_empty(form, event);
+        verify_confirm(form, event);
     });
 }
 
