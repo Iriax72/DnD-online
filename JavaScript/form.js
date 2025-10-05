@@ -36,7 +36,6 @@ function verify_no_empty(form, event) {
     inputs.forEach(input => {
         if (!input.dataset.optional && input.value === "") {
             empty.push(input);
-            add_error(form, [input]);
         }
     });
     if (empty) {
