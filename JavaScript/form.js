@@ -1,5 +1,3 @@
-alert("script chargé");
-
 import * as func from './form_functions.js'
 
 let isLoginOpend = false;
@@ -15,7 +13,6 @@ const signin_form = document.querySelector("#signin_form");
 const cross_buttons = [...document.querySelectorAll(".close-pop")];
 
 function toggle_login() {
-    alert("toggle");
     if (isLoginOpend) {
         login_pop.classList.add("hidden");
     } else {
@@ -26,7 +23,6 @@ function toggle_login() {
 };
 
 function toggle_signin() {
-    alert("toggle");
     if (isCreateAccountOpend) {
         signin_pop.classList.add("hidden");
     } else {
@@ -36,7 +32,7 @@ function toggle_signin() {
     clear_error_value(signin_form);
 };
 
-function verify_no_empty(form) {
+/*function verify_no_empty(form) {
     let empty = [];
     const inputs = [...form.querySelectorAll("input")];
     inputs.forEach(input => {
@@ -49,7 +45,7 @@ function verify_no_empty(form) {
         return "Veuillez remplir tous les champs nécessaires.";
     }
     return "";
-};
+};*/
 
 function verify_confirm (form) {
     const password = form.querySelector("#new_password") ?? null;
@@ -73,19 +69,19 @@ function clear_error_value(form) {
     form.querySelector(".error-div").classList.add("hidden");
 }
 
-function add_error(form, inputs) {
+/*function add_error(form, inputs) {
     inputs.forEach(i => {
         i.classList.add("error-value");
         const label = form.querySelector(`#${i.id}_label`);
         label.classList.add("error-value-label");
     })
-}
+}*/
 
 function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         let error = [];
         clear_error_value(form);
-        let empty = verify_no_empty(form);
+        let empty = func.verify_no_empty(form);
         if (empty) {
             error.push(empty);
         }
@@ -108,20 +104,16 @@ function error_form(form, event, error =false) {
     }
 }
 
-alert(login_buttons);
 login_buttons.forEach(b => {
     b.onclick = () => {
-        alert("login oppend");
         if (!isLoginOpend) {
             toggle_login();
         }
     };
 });
 
-alert(signin_buttons);
 signin_buttons.forEach(b => {
     b.onclick = () => {
-        alert("signin oppend");
         if (!isCreateAccountOpend) {
             toggle_signin();
         }
