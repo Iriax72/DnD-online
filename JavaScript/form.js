@@ -106,6 +106,7 @@ function error_form(form, event, error =false) {
     }
 }
 
+alert(login_buttons);
 login_buttons.forEach(b => {
     b.onclick = () => {
         alert("login oppend");
@@ -115,6 +116,7 @@ login_buttons.forEach(b => {
     };
 });
 
+alert(signin_buttons);
 signin_buttons.forEach(b => {
     b.onclick = () => {
         alert("signin oppend");
