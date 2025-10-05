@@ -1,3 +1,5 @@
+import * as f from './form_functions.js'
+
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_pop = document.querySelector("#login_pop");
@@ -30,7 +32,7 @@ function toggle_signin() {
     clear_error_value(signin_form);
 };
 
-function verify_no_empty(form) {
+/*function verify_no_empty(form) {
     let empty = [];
     const inputs = [...form.querySelectorAll("input")];
     inputs.forEach(input => {
@@ -43,7 +45,7 @@ function verify_no_empty(form) {
         return "Veuillez remplir tous les champs nécessaires.";
     }
     return "";
-};
+};*/
 
 function verify_confirm (form) {
     const password = form.querySelector("#new_password") ?? null;
@@ -67,19 +69,19 @@ function clear_error_value(form) {
     form.querySelector(".error-div").classList.add("hidden");
 }
 
-function add_error(form, inputs) {
+/*function add_error(form, inputs) {
     inputs.forEach(i => {
         i.classList.add("error-value");
         const label = form.querySelector(`#${i.id}_label`);
         label.classList.add("error-value-label");
     })
-}
+}*/
 
 function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         let error = [];
         clear_error_value(form);
-        let empty = verify_no_empty(form);
+        let empty = f.verify_no_empty(form);
         if (empty) {
             error.push(empty);
         }
@@ -88,7 +90,6 @@ function intercept_submit(form) {
             error.push(confirm);
         }
         error_form(form, event, error[0])
-        alert(error);
     });
 }
 
