@@ -35,7 +35,7 @@ function verify_no_empty(form, event) {
     const inputs = [...form.querySelectorAll("input")];
     inputs.forEach(input => {
         if (!input.dataset.optional && input.value === "") {
-            empty += input;
+            empty.push(input);
             add_error(form, [input]);
         }
     });
