@@ -96,10 +96,10 @@ function error_form(form, event, error =false) {
     error_div.querySelector("p").textContent = error;
     if(error){
         error_div.classList.remove("hidden");
+        event.preventDefault();
     } else if(!error_div.classList.contains("hidden")){
         error_div.classList.add("hidden");
     }
-    event.preventDefault()
 }
 
 login_buttons.forEach(b => {
