@@ -30,7 +30,7 @@ function toggle_signin() {
     clear_error_value(signin_form);
 };
 
-function verify_no_empty(form, event) {
+function verify_no_empty(form) {
     let empty = [];
     const inputs = [...form.querySelectorAll("input")];
     inputs.forEach(input => {
@@ -39,20 +39,20 @@ function verify_no_empty(form, event) {
         }
     });
     if (empty) {
-        event.preventDefault()
-        error_form(form, "Veuillez remplir tous les champs nécessaires.");
         add_error(form, empty);
+        return "Veuillez remplir tous les champs nécessaires.";
     }
+    return "";
 };
 
-function verify_confirm (form, event) {
+function verify_confirm (form) {
     const password = form.querySelector("#new_password") ?? null;
     const confirmation = form.querySelector("#confirm_new_password") ?? null;
     if (password && confirmation && password.value != confirmation.value) {
-        event.preventDefault();
         add_error(form, [password, confirmation]);
-        error_form(form, "Erreur dans la confirmation du mot de passe");
+        return "Erreur dans la confirmation du mot de passe";
     }
+    return "";
 }
 
 function clear_error_value(form) {
@@ -77,21 +77,29 @@ function add_error(form, inputs) {
 
 function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
+        let error = [];
         clear_error_value(form);
-        verify_no_empty(form, event);
-        verify_confirm(form, event);
+        let empty = verify_no_empty(form);
+        if (empty) {
+            error.push(empty);
+        }
+        let confirm = verify_confirm(form);
+        if (confirm) {
+            error.push(confirm);
+        }
+        error_form(form, event, error[0])
     });
 }
 
-function error_form(form, error) {
+function error_form(form, event, error =false) {
     const error_div = form.querySelector(".error-div");
-    if(error && error_div.classList.contains("hidden")){
+    error_div.querySelector("p").textContent = error;
+    if(error){
         error_div.classList.remove("hidden");
-        error_div.querySelector("p").textContent = error;
-    } else if(!error_div.classList.contains("hidden")) {
+    } else if(!error_div.classList.contains("hidden")){
         error_div.classList.add("hidden");
-        error_div.querySelector("p").textContent = null;
     }
+    event.preventDefault()
 }
 
 login_buttons.forEach(b => {
