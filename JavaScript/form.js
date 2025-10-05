@@ -1,4 +1,4 @@
-import * as f from './form_functions.js'
+import * as func from './form_functions.js'
 
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
@@ -13,6 +13,7 @@ const signin_form = document.querySelector("#signin_form");
 const cross_buttons = [...document.querySelectorAll(".close-pop")];
 
 function toggle_login() {
+    alert("toggle");
     if (isLoginOpend) {
         login_pop.classList.add("hidden");
     } else {
@@ -23,6 +24,7 @@ function toggle_login() {
 };
 
 function toggle_signin() {
+    alert("toggle");
     if (isCreateAccountOpend) {
         signin_pop.classList.add("hidden");
     } else {
@@ -106,6 +108,7 @@ function error_form(form, event, error =false) {
 
 login_buttons.forEach(b => {
     b.onclick = () => {
+        alert("login oppend");
         if (!isLoginOpend) {
             toggle_login();
         }
@@ -114,6 +117,7 @@ login_buttons.forEach(b => {
 
 signin_buttons.forEach(b => {
     b.onclick = () => {
+        alert("signin oppend");
         if (!isCreateAccountOpend) {
             toggle_signin();
         }
