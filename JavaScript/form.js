@@ -50,7 +50,6 @@ function verify_confirm (form, event) {
     const password = form.querySelector("#new_password") ?? null;
     const confirmation = form.querySelector("#confirm_new_password") ?? null;
     if (password && confirmation && password.value != confirmation.value) {
-        alert('mdp != confirm');
         event.preventDefault();
         add_error(form, [password, confirmation]);
         error_form(form, "Erreur dans la confirmation du mot de passe");
@@ -71,8 +70,8 @@ function clear_error_value(form) {
 
 function add_error(form, inputs) {
     inputs.forEach(i => {
-        alert("i: ", i);
         i.classList.add("error-value");
+        alert(`#${i.id}_label`);
         form.querySelector(`#${i.id}_label`).classList.add("error_value_label");
     })
 }
