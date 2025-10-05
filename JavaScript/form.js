@@ -85,8 +85,13 @@ function intercept_submit(form) {
 
 function error_form(form, error) {
     const error_div = form.querySelector(".error-div");
-    error_div.classList.remove("hidden");
-    error_div.querySelector("p").textContent = error;
+    if(error && "hidden" in error_div.classList){
+        error_div.classList.remove("hidden");
+        error_div.querySelector("p").textContent = error;
+    } else if(!"hidden" in error_div.classList) {
+        error_div.classList.add("hidden");
+        error_div.querySelector("p").textContent = null;
+    }
 }
 
 login_buttons.forEach(b => {
