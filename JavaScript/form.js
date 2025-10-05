@@ -38,7 +38,7 @@ function verify_no_empty(form) {
             empty.push(input);
         }
     });
-    if (empty) {
+    if (empty.length > 0) {
         add_error(form, empty);
         return "Veuillez remplir tous les champs nécessaires.";
     }
