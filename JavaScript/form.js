@@ -19,7 +19,7 @@ function toggle_login() {
         login_pop.classList.remove("hidden");
     }
     isLoginOpend = !isLoginOpend;
-    clear_error_value(login_form);
+    func.clear_error_value(login_form);
 };
 
 function toggle_signin() {
@@ -29,7 +29,7 @@ function toggle_signin() {
         signin_pop.classList.remove("hidden");
     }
     isCreateAccountOpend = !isCreateAccountOpend;
-    clear_error_value(signin_form);
+    func.clear_error_value(signin_form);
 };
 
 /*function verify_no_empty(form) {
@@ -47,7 +47,7 @@ function toggle_signin() {
     return "";
 };*/
 
-function verify_confirm (form) {
+/*function verify_confirm (form) {
     const password = form.querySelector("#new_password") ?? null;
     const confirmation = form.querySelector("#confirm_new_password") ?? null;
     if (password && confirmation && password.value != confirmation.value) {
@@ -55,9 +55,9 @@ function verify_confirm (form) {
         return "Erreur dans la confirmation du mot de passe";
     }
     return "";
-}
+}*/
 
-function clear_error_value(form) {
+/*function clear_error_value(form) {
     const labels = [...form.querySelectorAll("label")];
     const inputs = [...form.querySelectorAll("input")];
     labels.forEach(l => {
@@ -67,7 +67,7 @@ function clear_error_value(form) {
         i.classList.remove("error-value");
     });
     form.querySelector(".error-div").classList.add("hidden");
-}
+}*/
 
 /*function add_error(form, inputs) {
     inputs.forEach(i => {
@@ -77,23 +77,23 @@ function clear_error_value(form) {
     })
 }*/
 
-function intercept_submit(form) {
+/*function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         let error = [];
-        clear_error_value(form);
+        func.clear_error_value(form);
         let empty = func.verify_no_empty(form);
         if (empty) {
             error.push(empty);
         }
-        let confirm = verify_confirm(form);
+        let confirm = func.verify_confirm(form);
         if (confirm) {
             error.push(confirm);
         }
-        error_form(form, event, error[0])
+        func.error_form(form, event, error[0])
     });
-}
+}*/
 
-function error_form(form, event, error =false) {
+/*function error_form(form, event, error =false) {
     const error_div = form.querySelector(".error-div");
     error_div.querySelector("p").textContent = error;
     if(error){
@@ -102,7 +102,7 @@ function error_form(form, event, error =false) {
     } else if(!error_div.classList.contains("hidden")){
         error_div.classList.add("hidden");
     }
-}
+}*/
 
 login_buttons.forEach(b => {
     b.onclick = () => {
@@ -130,5 +130,5 @@ cross_buttons.forEach(b => {
     };
 });
 
-intercept_submit(login_form);
-intercept_submit(signin_form);
+func.intercept_submit(login_form);
+func.intercept_submit(signin_form);
