@@ -6,9 +6,9 @@ export function intercept_submit (form) {
         if (empty) {
             error.push(empty);
         }
-        const char_number = verify_char_number(form);
+        const char_number = 3; //verify_char_number(form);
         if (char_number) {
-            //error.push(char_number);
+            error.push(char_number);
         }
         const confirm = verify_confirm(form);
         if (confirm) {
