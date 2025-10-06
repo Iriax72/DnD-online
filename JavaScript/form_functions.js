@@ -6,12 +6,10 @@ export function intercept_submit (form) {
         if (empty) {
             error.push(empty);
         }
-        /*
         const char_number = verify_char_number(form);
         if (char_number) {
-            error.push(char_number);
+            //error.push(char_number);
         }
-        */
         const confirm = verify_confirm(form);
         if (confirm) {
             error.push(confirm);
@@ -35,7 +33,6 @@ function verify_no_empty(form) {
     return "";
 }
 
-/*
 function verify_char_number(form) {
     const inputs = [...form.querySelectorAll("input")];
     const values = inputs.map(input => input.value);
@@ -55,7 +52,6 @@ function verify_char_number(form) {
     }
     return "";
 }
-    */
 
 function add_error (form, inputs) {
     inputs.forEach(i => {
