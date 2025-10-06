@@ -2,11 +2,15 @@ export function intercept_submit (form) {
     form.addEventListener("submit", (event) => {
         let error = [];
         clear_error_value(form);
-        let empty = verify_no_empty(form);
+        const empty = verify_no_empty(form);
         if (empty) {
             error.push(empty);
         }
-        let confirm = verify_confirm(form);
+        const char_number = verify_char_number(form);
+        if (char_number) {
+            error.push(char_number);
+        }
+        const confirm = verify_confirm(form);
         if (confirm) {
             error.push(confirm);
         }
@@ -25,6 +29,26 @@ function verify_no_empty(form) {
     if (empty.length > 0) {
         add_error(form, empty);
         return "Veuillez remplire tous les champs nécéssaires.";
+    }
+    return "";
+}
+
+function verify_char_number(form) {
+    const inputs = [...form.querySelectorAll("input")];
+    const values = inputs.map(input => input.value);
+    let wrong_value = [];
+    values.forEach(v => {
+        if(typeof v === "string" && (v.length < 5 || v.length > 20)){
+            wrong_value.push(v)
+        }
+    });
+    if (wrong_value.length > 0){
+        let wrong_input = [];
+        wrong_value.forEach(v => {
+            wrong_input.push(inputs[indexOf(v)]);
+        });
+        add_error(form, wrong_input);
+        return "Veuillez entrez entre 5 et 20 charactères.";
     }
     return "";
 }

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_POST['new_pseudo'])) {
+
+}
 $_SESSION['connected'] = $_SESSION['connected'] ?? false;
 $page = $_GET['page'] ?? 'accueil';
 ?>
