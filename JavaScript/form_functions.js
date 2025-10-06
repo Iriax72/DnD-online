@@ -48,7 +48,7 @@ function verify_char_number(form) {
         let wrong_input = [];
         wrong_value.forEach(v => {
             alert(inputs[values.indexOf(v)])
-            wrong_input.push(values.inputs[indexOf(v)]);
+            wrong_input.push(index[values.inputs[indexOf(v)]]);
         });
         alert(wrong_input)
         add_error(form, wrong_input);
@@ -69,7 +69,7 @@ function error_form (form, event, error ="") {
     const error_div = form.querySelector(".error-div");
     if (error.length > 0) {
         error_div.classList.remove("hidden");
-        preventDefault();
+        event.preventDefault();
     } else if (!error_div.classList.contains("hidden")) {
         error_div.classList.add("hidden");
     }
