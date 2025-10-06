@@ -70,7 +70,7 @@ function error_form (form, event, error ="") {
     if (error.length > 0) {
         error_div.classList.remove("hidden");
         preventDefault();
-    } else if () {
+    } else if (!error_div.classList.contains("hidden")) {
         error_div.classList.add("hidden");
     }
     const error_msg = "";
