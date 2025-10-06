@@ -14,7 +14,7 @@ export function intercept_submit (form) {
         if (confirm) {
             error.push(confirm);
         }
-        error_form(form, event, error[0])
+        error_form(form, event, error)
     });
 }
 
@@ -67,13 +67,20 @@ function add_error (form, inputs) {
 
 function error_form (form, event, error ="") {
     const error_div = form.querySelector(".error-div");
-    error_div.querySelector("p").textContent = error;
-    if (error) {
+    if (error.length > 0) {
         error_div.classList.remove("hidden");
-        event.preventDefault();
-    } else if (!error_div.classList.contains("hidden")) {
+        preventDefault();
+    } else if () {
         error_div.classList.add("hidden");
     }
+    const error_msg = "";
+    error.forEach(e => {
+        if (e) {
+            error_msg = e;
+            break;
+        }
+    })
+    error_div.querySelector("p").textContent = error_msg;
 }
 
 function verify_confirm (form) {
