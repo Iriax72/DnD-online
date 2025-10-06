@@ -48,7 +48,7 @@ function verify_char_number(form) {
         let wrong_input = [];
         wrong_value.forEach(v => {
             alert(inputs[values.indexOf(v)])
-            wrong_input.push(inputs[indexOf(v)]);
+            wrong_input.push(values.inputs[indexOf(v)]);
         });
         alert(wrong_input)
         add_error(form, wrong_input);
