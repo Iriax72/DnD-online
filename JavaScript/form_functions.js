@@ -75,9 +75,8 @@ function error_form (form, event, error ="") {
     }
     const error_msg = "";
     error.forEach(e => {
-        if (e) {
+        if (error_msg !== e) {
             error_msg = e;
-            break;
         }
     })
     error_div.querySelector("p").textContent = error_msg;
