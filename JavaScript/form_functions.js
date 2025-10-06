@@ -6,7 +6,7 @@ export function intercept_submit (form) {
         if (empty) {
             error.push(empty);
         }
-        const char_number = 3; //verify_char_number(form);
+        const char_number = verify_char_number(form);
         if (char_number) {
             error.push(char_number);
         }
@@ -34,6 +34,7 @@ function verify_no_empty(form) {
 }
 
 function verify_char_number(form) {
+    alert('debut de charNumber()')
     const inputs = [...form.querySelectorAll("input")];
     const values = inputs.map(input => input.value);
     let wrong_value = [];
@@ -43,10 +44,12 @@ function verify_char_number(form) {
         }
     });
     if (wrong_value.length > 0){
+        alert('wrong_value.length > 0')
         let wrong_input = [];
         wrong_value.forEach(v => {
             wrong_input.push(inputs[indexOf(v)]);
         });
+        alert(wrong_input)
         add_error(form, wrong_input);
         return "Veuillez entrez entre 5 et 20 charactères.";
     }
