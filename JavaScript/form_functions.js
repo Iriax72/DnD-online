@@ -36,7 +36,7 @@ function verify_char_number(form) {
         hasGoodSize = v.length >= 5 && v.length <= 20;
         isOptional = inputs[values.indexOf(v)].dataset.optional ?? false;
         hasValue = v !== ""
-        if ((isOptional || hasValue) && isString && hasGoodSize) {
+        if ((!isOptional || hasValue) && isString && hasGoodSize) {
             wrong_values.push(v)
         }
     });
