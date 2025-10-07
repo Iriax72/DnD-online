@@ -6,7 +6,7 @@ export function intercept_submit(form) {
         error.push(verify_no_empty(form));
         error.push(verify_char_number(form));
         error.push(verify_confirm(form));
-
+        alert("error_form mtn")
         error_form(form, event, error)
     });
 }
@@ -56,6 +56,7 @@ function add_error_class(form, inputs) {
 }
 
 function error_form(form, event, error = []) {
+    //il faudrait pas querySelectorAll() en l.60 ?
     const error_div = form.querySelector(".error-div");
     alert(error.some(e => e !== ""), 'error: ', error);
     if (error.some(e => e !== "")) {
