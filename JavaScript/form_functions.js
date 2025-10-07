@@ -2,18 +2,11 @@ export function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         let error = [];
         clear_error_value(form);
-        const empty = verify_no_empty(form);
-        if (empty) {
-            error.push(empty);
-        }
-        const char_number = verify_char_number(form);
-        if (char_number) {
-            error.push(char_number);
-        }
-        const confirm = verify_confirm(form);
-        if (confirm) {
-            error.push(confirm);
-        }
+
+        error.push(verify_no_empty(form));
+        error.push(verify_char_number(form));
+        error.push(verify_confirm(form));
+        
         error_form(form, event, error)
     });
 }
