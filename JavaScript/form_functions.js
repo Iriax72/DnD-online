@@ -58,9 +58,8 @@ function verify_password(form){
             add_error_class(form, [password_input]);
             return "Le mot de passe doit contenur au moins un chiffre."
         }
-    } else {
-        return "";
     }
+    return "";
 }
 
 function add_error_class(form, inputs) {
