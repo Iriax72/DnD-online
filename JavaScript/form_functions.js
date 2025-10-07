@@ -36,13 +36,12 @@ function verify_char_number(form) {
             wrong_value.push(v)
         }
     });
-    alert('A');
     if (wrong_value.length > 0) {
         let wrong_input = [];
         wrong_value.forEach(v => {
-            alert('r dt')
-            alert('indexof v: ' + inputs[values[indexOf(v)]])
-            wrong_input.push(inputs[values.indexOf(v)]);
+            alert('A')
+            alert('indexof v: ' + inputs[values[values.indexOf(v)]])
+            wrong_input.push(inputs[values[values.indexOf(v)]]);
         });
         add_error_class(form, wrong_input);
         alert('B');
