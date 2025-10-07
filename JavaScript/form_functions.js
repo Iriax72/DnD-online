@@ -32,7 +32,11 @@ function verify_char_number(form) {
     const values = inputs.map(input => input.value);
     let wrong_values = [];
     values.forEach(v => {
-        if (typeof v === "string" && (v.length < 5 || v.length > 20)) {
+        isString = typeof v === "string";
+        hasGoodSize = v.length >= 5 && v.length <= 20;
+        isOptional = inputs[values.indexOf(v)].dataset.optional ?? false;
+        hasValue = v !== ""
+        if ((isOptional || hasValue) && isString && hasGoodSize) {
             wrong_values.push(v)
         }
     });
