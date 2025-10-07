@@ -3,9 +3,11 @@ export function intercept_submit(form) {
         alert('submit');
         let error = [];
         clear_error_value(form);
-
+        alert('clear error value ok');
         error.push(verify_no_empty(form));
+        alert(1);
         error.push(verify_char_number(form));
+        alert(2);
         error.push(verify_confirm(form));
         alert("error_form mtn")
         error_form(form, event, error)
