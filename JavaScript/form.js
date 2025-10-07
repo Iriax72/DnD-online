@@ -1,4 +1,4 @@
-import * as func from './form_functions.js'
+import {intercept_submit} from "./form_functions";
 
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
@@ -58,5 +58,5 @@ cross_buttons.forEach(b => {
     };
 });
 
-func.intercept_submit(login_form);
-func.intercept_submit(signin_form);
+intercept_submit(login_form);
+intercept_submit(signin_form);

@@ -1,4 +1,4 @@
-export function intercept_submit (form) {
+export function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         let error = [];
         clear_error_value(form);
@@ -27,37 +27,34 @@ function verify_no_empty(form) {
         }
     });
     if (empty.length > 0) {
-        add_error(form, empty);
+        add_error_class(form, empty);
         return "Veuillez remplire tous les champs nécéssaires.";
     }
     return "";
 }
 
 function verify_char_number(form) {
-    alert('debut de charNumber()')
     const inputs = [...form.querySelectorAll("input")];
     const values = inputs.map(input => input.value);
     let wrong_value = [];
     values.forEach(v => {
-        if(typeof v === "string" && (v.length < 5 || v.length > 20)){
+        if (typeof v === "string" && (v.length < 5 || v.length > 20)) {
             wrong_value.push(v)
         }
     });
-    if (wrong_value.length > 0){
-        alert('wrong_value.length > 0')
+    if (wrong_value.length > 0) {
         let wrong_input = [];
         wrong_value.forEach(v => {
-            alert(inputs[values.indexOf(v)])
-            wrong_input.push(index[values.inputs[indexOf(v)]]);
+            alert('indexof v: ', index[inputs[values.inputs[indexOf(v)]]])
+            wrong_input.push(index[inputs[values.indexOf(v)]]);
         });
-        alert(wrong_input)
-        add_error(form, wrong_input);
+        add_error_class(form, wrong_input);
         return "Veuillez entrez entre 5 et 20 charactères.";
     }
     return "";
 }
 
-function add_error (form, inputs) {
+function add_error_class(form, inputs) {
     inputs.forEach(i => {
         i.classList.add("error-value");
         const label = form.querySelector(`#${i.id}_label`);
@@ -65,7 +62,7 @@ function add_error (form, inputs) {
     });
 }
 
-function error_form (form, event, error ="") {
+function error_form(form, event, error = "") {
     const error_div = form.querySelector(".error-div");
     if (error.length > 0) {
         error_div.classList.remove("hidden");
@@ -78,16 +75,16 @@ function error_form (form, event, error ="") {
         if (error_msg !== e) {
             error_msg = e;
         }
-    })
+    });
     error_div.querySelector("p").textContent = error_msg;
 }
 
-function verify_confirm (form) {
+function verify_confirm(form) {
     //ca c'est pas idéal, il faudrait changer mais bon.
     const password = form.querySelector("#new_password") ?? null;
     const confirmation = form.querySelector("#confirm_new_password") ?? null;
     if (password && confirmation && password.value != confirmation.value) {
-        add_error(form, [password, confirmation])
+        add_error_class(form, [password, confirmation])
         return "Erreur dans la confirmation du mot de passe";
     }
     return "";
@@ -101,6 +98,6 @@ function clear_error_value(form) {
     });
     inputs.forEach(i => {
         i.classList.remove("error-value");
-    })
+    });
     form.querySelector(".error-div").classList.add("hidden");
 }
