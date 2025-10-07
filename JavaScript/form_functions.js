@@ -38,8 +38,8 @@ function verify_char_number(form) {
     if (wrong_value.length > 0) {
         let wrong_input = [];
         wrong_value.forEach(v => {
-            alert('indexof v: ', index[inputs[values.inputs[indexOf(v)]]])
-            wrong_input.push(index[inputs[values.indexOf(v)]]);
+            alert('indexof v: ' + inputs[values[indexOf(v)]])
+            wrong_input.push(inputs[values.indexOf(v)]);
         });
         add_error_class(form, wrong_input);
         return "Veuillez entrez entre 5 et 20 charactères.";
@@ -58,7 +58,7 @@ function add_error_class(form, inputs) {
 function error_form(form, event, error = []) {
     //il faudrait pas querySelectorAll() en l.60 ?
     const error_div = form.querySelector(".error-div");
-    alert(error.some(e => e !== ""), 'error: ', error);
+    alert(error.some(e => e !== "") + 'error: ' + error);
     if (error.some(e => e !== "")) {
         error_div.classList.remove("hidden");
         event.preventDefault();
