@@ -1,5 +1,6 @@
 export function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
+        alert('submit');
         let error = [];
         clear_error_value(form);
 

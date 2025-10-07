@@ -1,6 +1,5 @@
-alert("debut form.js")
 import {intercept_submit} from "./form_functions.js";
-alert("import ok")
+
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_pop = document.querySelector("#login_pop");
@@ -61,3 +60,4 @@ cross_buttons.forEach(b => {
 
 intercept_submit(login_form);
 intercept_submit(signin_form);
+alert('intercept_submit() assigné');
