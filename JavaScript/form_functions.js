@@ -6,7 +6,7 @@ export function intercept_submit(form) {
         error.push(verify_no_empty(form));
         error.push(verify_char_number(form));
         error.push(verify_confirm(form));
-        
+
         error_form(form, event, error)
     });
 }
@@ -57,18 +57,13 @@ function add_error_class(form, inputs) {
 
 function error_form(form, event, error = []) {
     const error_div = form.querySelector(".error-div");
-    if (error.length > 0) {
+    if (error.some(e => e !== "")) {
         error_div.classList.remove("hidden");
         event.preventDefault();
     } else if (!error_div.classList.contains("hidden")) {
         error_div.classList.add("hidden");
     }
-    const error_msg = "";
-    [...error].reverse().forEach(e => {
-        if (error_msg !== e) {
-            error_msg = e;
-        }
-    });
+    const error_msg = error.find(e => e !== "");
     error_div.querySelector("p").textContent = error_msg;
 }
 
