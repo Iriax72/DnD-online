@@ -1,9 +1,7 @@
 export function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
-        alert('submit');
         let error = [];
         clear_error_value(form);
-        alert('clear error value ok');
         error.push(verify_no_empty(form));
         alert(1);
         error.push(verify_char_number(form));
@@ -30,6 +28,7 @@ function verify_no_empty(form) {
 }
 
 function verify_char_number(form) {
+    alert('verifycharnumber');
     const inputs = [...form.querySelectorAll("input")];
     const values = inputs.map(input => input.value);
     let wrong_value = [];
@@ -38,6 +37,7 @@ function verify_char_number(form) {
             wrong_value.push(v)
         }
     });
+    alert('A');
     if (wrong_value.length > 0) {
         let wrong_input = [];
         wrong_value.forEach(v => {
@@ -45,8 +45,10 @@ function verify_char_number(form) {
             wrong_input.push(inputs[values.indexOf(v)]);
         });
         add_error_class(form, wrong_input);
+        alert('B');
         return "Veuillez entrez entre 5 et 20 charactères.";
     }
+    alert('C');
     return "";
 }
 
