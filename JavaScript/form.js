@@ -1,5 +1,5 @@
 alert("debut form.js")
-import {intercept_submit} from "./form_functions";
+import {intercept_submit} from "/JavaScript/form_functions";
 alert("import ok")
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
