@@ -3,12 +3,9 @@ export function intercept_submit(form) {
         let error = [];
         clear_error_value(form);
         error.push(verify_no_empty(form));
-        alert(1);
         error.push(verify_char_number(form));
-        alert(2);
         error.push(verify_confirm(form));
-        alert("error_form mtn")
-        error_form(form, event, error)
+        error_form(form, event, error);
     });
 }
 
@@ -35,7 +32,7 @@ function verify_char_number(form) {
         const isString = typeof v === "string";
         const hasGoodSize = v.length >= 5 && v.length <= 20;
         const isOptional = i.dataset.optional ?? false;
-        const hasValue = v !== ""
+        const hasValue = v !== "";
         if ((!isOptional || hasValue) && isString && !hasGoodSize) {
             wrong_inputs.push(i);
         }
@@ -51,14 +48,13 @@ function add_error_class(form, inputs) {
     inputs.forEach(i => {
         i.classList.add("error-value");
         const label = form.querySelector(`#${i.id}_label`);
-        label.classList.add("error-value-label")
+        label.classList.add("error-value-label");
     });
 }
 
 function error_form(form, event, error = []) {
     //il faudrait pas querySelectorAll() en l.60 ?
     const error_div = form.querySelector(".error-div");
-    alert(error.some(e => e !== "") + 'error: ' + error);
     if (error.some(e => e !== "")) {
         error_div.classList.remove("hidden");
         event.preventDefault();
@@ -74,7 +70,7 @@ function verify_confirm(form) {
     const password = form.querySelector("#new_password") ?? null;
     const confirmation = form.querySelector("#confirm_new_password") ?? null;
     if (password && confirmation && password.value != confirmation.value) {
-        add_error_class(form, [password, confirmation])
+        add_error_class(form, [password, confirmation]);
         return "Erreur dans la confirmation du mot de passe";
     }
     return "";

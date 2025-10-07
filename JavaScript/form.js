@@ -20,7 +20,7 @@ function toggle_login() {
     }
     isLoginOpend = !isLoginOpend;
     func.clear_error_value(login_form);
-};
+}
 
 function toggle_signin() {
     if (isCreateAccountOpend) {
@@ -30,7 +30,7 @@ function toggle_signin() {
     }
     isCreateAccountOpend = !isCreateAccountOpend;
     func.clear_error_value(signin_form);
-};
+}
 
 login_buttons.forEach(b => {
     b.onclick = () => {
@@ -60,4 +60,3 @@ cross_buttons.forEach(b => {
 
 intercept_submit(login_form);
 intercept_submit(signin_form);
-alert('intercept_submit() assigné');
