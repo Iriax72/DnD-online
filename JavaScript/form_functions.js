@@ -92,7 +92,7 @@ function verify_confirm(form) {
 
 function clear_error_value(form) {
     const label = [...form.querySelectorAll("label")];
-    const inputs = [...form.querySelectorAll("inputs")];
+    const inputs = [...form.querySelectorAll("input")];
     label.forEach(l => {
         l.classList.remove("error-value-label");
     });
