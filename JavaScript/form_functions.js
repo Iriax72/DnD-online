@@ -62,7 +62,7 @@ function add_error_class(form, inputs) {
     });
 }
 
-function error_form(form, event, error = "") {
+function error_form(form, event, error = []) {
     const error_div = form.querySelector(".error-div");
     if (error.length > 0) {
         error_div.classList.remove("hidden");
@@ -71,7 +71,7 @@ function error_form(form, event, error = "") {
         error_div.classList.add("hidden");
     }
     const error_msg = "";
-    error.forEach(e => {
+    [...error].reverse().forEach(e => {
         if (error_msg !== e) {
             error_msg = e;
         }
