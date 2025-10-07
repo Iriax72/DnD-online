@@ -4,6 +4,7 @@ export function intercept_submit(form) {
         clear_error_value(form);
         error.push(verify_no_empty(form));
         error.push(verify_char_number(form));
+        error.push(verify_password(form));
         error.push(verify_confirm(form));
         error_form(form, event, error);
     });
@@ -44,6 +45,24 @@ function verify_char_number(form) {
     return "";
 }
 
+function verify_password(form){
+    //ca c'est pas ideal, il daudraut changer mais bon
+    const password_input = form.querySelector("#new_password") ?? null;
+    if (password_input){
+        const password = password_input.value;
+        if (password.length < 8) {
+            add_error_class(form, password_input)
+            return "Le mot de passe doit faire au moins 8 charactères.";
+        }
+        if (!/\d/.test(password)) {
+            add_error_class(form, password_input);
+            return "Le mot de passe doit contenur au moins un chiffre."
+        }
+    } else {
+        return "";
+    }
+}
+
 function add_error_class(form, inputs) {
     inputs.forEach(i => {
         i.classList.add("error-value");
@@ -53,7 +72,7 @@ function add_error_class(form, inputs) {
 }
 
 function error_form(form, event, error = []) {
-    //il faudrait pas querySelectorAll() en l.60 ?
+    //il faudrait pas querySelectorAll() ?
     const error_div = form.querySelector(".error-div");
     if (error.some(e => e !== "")) {
         error_div.classList.remove("hidden");
