@@ -30,18 +30,17 @@ function verify_no_empty(form) {
 function verify_char_number(form) {
     const inputs = [...form.querySelectorAll("input")];
     const values = inputs.map(input => input.value);
-    let wrong_value = [];
+    let wrong_values = [];
     values.forEach(v => {
         if (typeof v === "string" && (v.length < 5 || v.length > 20)) {
-            wrong_value.push(v)
+            wrong_values.push(v)
         }
     });
-    if (wrong_value.length > 0) {
+    if (wrong_values.length > 0) {
         let wrong_input = [];
-        wrong_value.forEach(v => {
-            alert('A')
-            alert('indexof v: ' + inputs[values[values.indexOf(v)]])
-            wrong_input.push(inputs[values[values.indexOf(v)]]);
+        wrong_values.forEach(v => {
+            alert('indexof v: ' + inputs[values.indexOf(v)])
+            wrong_input.push(inputs[values.indexOf(v)]);
         });
         add_error_class(form, wrong_input);
         alert('B');
