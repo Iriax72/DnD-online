@@ -51,11 +51,11 @@ function verify_password(form){
     if (password_input){
         const password = password_input.value;
         if (password.length < 8) {
-            add_error_class(form, password_input)
+            add_error_class(form, [password_input])
             return "Le mot de passe doit faire au moins 8 charactères.";
         }
         if (!/\d/.test(password)) {
-            add_error_class(form, password_input);
+            add_error_class(form, [password_input]);
             return "Le mot de passe doit contenur au moins un chiffre."
         }
     } else {
