@@ -29,28 +29,21 @@ function verify_no_empty(form) {
 
 function verify_char_number(form) {
     const inputs = [...form.querySelectorAll("input")];
-    const values = inputs.map(input => input.value);
-    let wrong_values = [];
-    values.forEach(v => {
+    let wrong_inputs = [];
+    inputs.forEach(i => {
+        v = i.value;
         isString = typeof v === "string";
         hasGoodSize = v.length >= 5 && v.length <= 20;
-        isOptional = inputs[values.indexOf(v)].dataset.optional ?? false;
+        isOptional = i.dataset.optional ?? false;
         hasValue = v !== ""
-        if ((!isOptional || hasValue) && isString && hasGoodSize) {
-            wrong_values.push(v)
+        if ((!isOptional || hasValue) && isString && !hasGoodSize) {
+            wrong_inputs.push(i);
         }
     });
-    if (wrong_values.length > 0) {
-        let wrong_input = [];
-        wrong_values.forEach(v => {
-            alert('indexof v: ' + inputs[values.indexOf(v)])
-            wrong_input.push(inputs[values.indexOf(v)]);
-        });
-        add_error_class(form, wrong_input);
-        alert('B');
+    if (wrong_inputs.length > 0) {
+        add_error_class(form, wrong_inputs);
         return "Veuillez entrez entre 5 et 20 charactères.";
     }
-    alert('C');
     return "";
 }
 
