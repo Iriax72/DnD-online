@@ -57,6 +57,7 @@ function add_error_class(form, inputs) {
 
 function error_form(form, event, error = []) {
     const error_div = form.querySelector(".error-div");
+    alert(error.some(e => e !== ""), 'error: ', error);
     if (error.some(e => e !== "")) {
         error_div.classList.remove("hidden");
         event.preventDefault();
