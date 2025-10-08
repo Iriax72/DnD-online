@@ -31,7 +31,7 @@ function verify_char_number(form) {
     inputs.forEach(i => {
         const v = i.value;
         const isString = typeof v === "string";
-        const hasGoodSize = v.length >= 5 && v.length <= 20;
+        const hasGoodSize = v.length >= 5 && v.length <= 22;
         const isOptional = i.dataset.optional ?? false;
         const hasValue = v !== "";
         if ((!isOptional || hasValue) && isString && !hasGoodSize) {
@@ -40,7 +40,7 @@ function verify_char_number(form) {
     });
     if (wrong_inputs.length > 0) {
         add_error_class(form, wrong_inputs);
-        return "Veuillez entrez entre 5 et 20 charactères.";
+        return "Veuillez entrez entre 5 et 22 charactères.";
     }
     return "";
 }

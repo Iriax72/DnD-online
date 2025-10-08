@@ -1,5 +1,5 @@
 CREATE TABLE account (
-    'pseudo' (VARCHAR(20)),
-    'password' (VARCHAR(20)),
-    'email' (VARCHAR(20))
+    'pseudo' (VARCHAR(22)),
+    'password' (VARCHAR(22)),
+    'email' (VARCHAR(22))
 )
