@@ -1,0 +1,6 @@
+[env]
+DB_HOST = "db.fr-pari1.bengt.wasmernet.com"
+DB_PORT = "10272"
+DB_NAME = "accounts"
+DB_USER = "67f9f98370b58000641662e1a1c8"
+DB_PASS = "068e67f9-f983-737a-8000-dfb239a99a40"

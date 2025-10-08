@@ -1,8 +1,27 @@
 <?php
 session_start();
-if (isset($_POST['new_pseudo'])) {
 
+$db_host = getenv('DB_HOST');
+$db_port = getenv('DB_PORT');
+$db_name = getenv('DB_NAME');
+$db_user = getenv('DB_USER');
+$db_pass = getenv('DB_PASS');
+
+$pdo = new PDO(
+    "mysql:host=$db_host;port=$db_port;name=$db_name;charset=utf8",
+    $db_user,
+    $db_pass
+);
+$pdo->setAttribut(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo->setAttribut(PDO::ATTR_DEFAULT_FLETCH_MODE, PDO::FETCH_ASSOC);
+$pdo->setAttribut(PDO::ATTR_EMULATE_PREPARES, false);
+
+if (isset($_POST['new_pseudo'])) {
+    //ajouter le compte dans la db sql
+} else if (isset($_POST['pseudo'])) {
+    //contecter l'utilisateur
 }
+
 $_SESSION['connected'] = $_SESSION['connected'] ?? false;
 $page = $_GET['page'] ?? 'accueil';
 ?>
