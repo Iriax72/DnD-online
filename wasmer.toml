@@ -6,7 +6,7 @@ version = "0.1.0"
 "wasmer/php" = "*"
 
 [app]
-commande = "php -S 0.0.0.0:8080 -t ."
+command = "php -S 0.0.0.0:8080 -t ."
 
 [env]
 DB_HOST = "db.fr-pari1.bengt.wasmernet.com"
