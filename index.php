@@ -11,14 +11,19 @@ $db_name = getenv('DB_NAME');
 $db_user = getenv('DB_USER');
 $db_pass = getenv('DB_PASS');
 
-$pdo = new PDO(
-    "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8",
-    $db_user,
-    $db_pass
-);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$pdo->setAttribute(PDO::ATTR_DEFAULT_FLETCH_MODE, PDO::FETCH_ASSOC);
-$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+try {
+    $pdo = new PDO(
+        "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8",
+        $db_user,
+        $db_pass
+    );
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+} catch (PDOException $e) {
+    echo 'Erreur avec la PDO:' . $e->getMessage();
+}
 
 if (isset($_POST['new_pseudo'])) {
     //ajouter le compte dans la db sql
