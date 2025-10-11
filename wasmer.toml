@@ -3,7 +3,7 @@ name = "dnd-online"
 version = "0.1.0"
 
 [dependencies]
-php = "*"
+php = "8.2.0"
 
 [app]
 command = "php -S 0.0.0.0:8080 -t ."
