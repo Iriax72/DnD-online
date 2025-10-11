@@ -3,7 +3,7 @@ name = "dnd-online"
 version = "0.1.0"
 
 [dependencies]
-"wasmer/php" = "*"
+php = "*"
 
 [app]
 command = "php -S 0.0.0.0:8080 -t ."
