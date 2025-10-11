@@ -6,7 +6,7 @@ $db_user = getenv('DB_USERNAME');
 $db_pass = getenv('DB_PASSWORD');
 
 $pdo = new PDO(
-    "mysql:host=$db_host;port=$db_port;name=$db_name;charset=utf8",
+    "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8",
     $db_user,
     $db_pass
 );
