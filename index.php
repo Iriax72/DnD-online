@@ -3,11 +3,9 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
-
 require __DIR__ . '/php/database.php';
-
 if (isset($_POST['new_pseudo'])) {
-    //ajouter le compte dans la db sql
+    //ajout du compte dans la db.sql
 } else if (isset($_POST['pseudo'])) {
     //contecter l'utilisateur
 }

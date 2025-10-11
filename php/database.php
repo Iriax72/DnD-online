@@ -14,3 +14,6 @@ $pdo = new PDO(
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+$sql_file = file_get_contents(__DIR__ . '../sql/accounts.sql');
+$pdo->exec($sql_file);
