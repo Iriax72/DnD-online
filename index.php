@@ -5,9 +5,9 @@ ini_set('display_errors', 1);
 session_start();
 require __DIR__ . '/php/database.php';
 if (isset($_POST['new_pseudo'])) {
-    //ajout du compte dans la db.sql
+    alert('ajout du compte dans la db');
 } else if (isset($_POST['pseudo'])) {
-    //contecter l'utilisateur
+    alert('connexion...');
 }
 
 $_SESSION['connected'] = $_SESSION['connected'] ?? false;
