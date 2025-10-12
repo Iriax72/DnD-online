@@ -10,7 +10,7 @@ if (isset($_POST['new_pseudo'])) {
     $email = $_POST['new_email'] ?? null;
     $date = time();
     $stmt = $pdo->prepare("INSERT INTO accounts (pseudo, `password`, email, created_at) VALUES (?, ?, ?, ?)");
-    $stmt->execute([$peudo, $password, $email, $date]);
+    $stmt->execute([$pseudo, $password, $email, $date]);
 } else if (isset($_POST['pseudo'])) {
     echo 'connexion...';
 }
