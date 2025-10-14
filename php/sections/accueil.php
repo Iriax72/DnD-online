@@ -1,7 +1,7 @@
 <section id="accueil">
     <h2>Accueil</h2>
     <?php if($_SESSION['connected']): ?>
-        <p>Bonjour, <?= 'entrer le code ici' ?></p>
+        <p>Bonjour, <?= $_SESSION['pseudo'] ?></p>
     <?php else: ?>
         <div class="element">
             <p>Bienvenue sur DnD Online !</p>
