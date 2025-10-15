@@ -69,10 +69,11 @@ function login_correspond($pdo, string $email, string $pseudo, string $password)
     return true;
 }
 
-function idOf(string $email, $pdo):str {
+function idOf(string $email, $pdo):string {
     $stmt = $pdo->prepare("SELECT id FROM accounts WHERE email = :email LIMIT 1");
     $stmt->execute(['email' => $email]);
-    return $stmt->fetch();
+    $row = $stmt->fetch();
+    return $row ? $row['id'] : '';
 }
 
 $sql_file = file_get_contents(__DIR__ . '/../sql/accounts.sql');
