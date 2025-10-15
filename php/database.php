@@ -79,7 +79,7 @@ $sql_file = file_get_contents(__DIR__ . '/../sql/accounts.sql');
 $pdo->exec($sql_file);
 
 if (isset($_POST['new_email'])) {
-    signin();
+    signin($pdo);
 } else if (isset($_POST['email'])) {
-    login();
+    login($pdo);
 }
