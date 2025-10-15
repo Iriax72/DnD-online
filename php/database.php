@@ -22,7 +22,7 @@ function signin($pdo):void {
     $stmt = $pdo->prepare("SELECT * FROM accounts WHERE email = :email LIMIT 1");
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch();
-    if ($user) {
+    if (!$user) {
         $pseudo = $_POST['new_pseudo'];
         $password = $_POST['new_password'];
         $hash = password_hash($password, PASSWORD_DEFAULT);
