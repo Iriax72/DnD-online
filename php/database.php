@@ -14,9 +14,72 @@ $pdo = new PDO(
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-/*echo 'connexion au serveur réussie';
-$pdo->exec('CREATE DATABASE IF NOT EXISTS accounts');
-echo 'base accounts est crée';
-$pdo->exec('USE accounts');*/
+
+//-------------------------
+
+function signin():void {
+    $email = $_POST['new_email'];
+    $stmt = $pdo->prepare("SELECT * FROM accounts WHERE email = :email LIMIT 1");
+    $stmt->execute(['email' => $email]);
+    $user = $stmt->fetch();
+    if ($user) {
+        $pseudo = $_POST['new_pseudo'];
+        $password = $_POST['new_password'];
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $pdo->prepare("INSERT INTO accounts (pseudo, hashed_password, email, created_at) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$pseudo, $hash, $email, time()]);
+        echo "compte ($pseudo) enregistré.";
+    } else {
+        echo "cette adresse mail est déjà utilisée sur DnD Online.";
+        echo "clickez ici si c'est la votre et que vous voulez un message de récupération du mot de passe (pas encore immlelmenté).";
+    }
+}
+
+function login():void {
+    $email = $_POST['email'];
+    $pseudo = $_POST['pseudo'];
+    $password = $_POST['password'];
+    if (login_correspond($email, $pseudo, $password)) {
+        $_SESSION['connected'] = true;
+        $_SESSION['id'] = idOf($email);
+        $_SESSION['pseudo'] = $_POST['pseudo'];
+        echo "vous etes connecté en tant que $pseudo.";
+    } else {
+        //gérer ça !!
+        echo "error: identifiants incorrects.";
+    }
+}
+
+function login_correspond(string $email, string $pseudo, string $password):bool {
+    $stmt = $pdo->prepare("SELECT * FROM accounts WHERE email = :email LIMIT 1");
+    $stmt->execute(['email' => $email]);
+    $user = $stmt->fetch();
+    if (!$user) {
+        echo "email ($email) introuvable.";
+        return false;
+    }
+    if ($pseudo != user['pseudo']) {
+        echo "le pseudo ($pseudo) ne correspond pas à l'email ($email).";
+        return false;
+    }
+    if (!password_verify($password, $user['hashed_password'])) {
+        echo 'mot de passe incorrect';
+        return false;
+    }
+    return true;
+}
+
+function idOf(string $email):str {
+    $stmt = $pdo->prepare("SELECT id FROM accounts WHERE email = :email LIMIT 1");
+    $stmt->execute(['email' => $email]);
+    return $stmt->fetch();
+}
+
 $sql_file = file_get_contents(__DIR__ . '/../sql/accounts.sql');
 $pdo->exec($sql_file);
+
+if (isset($_POST['new_email'])) {
+    signin();
+} else if (isset($_POST['email'])) {
+    login();
+}
