@@ -58,7 +58,7 @@ function login_correspond($pdo, string $email, string $pseudo, string $password)
         echo "email ($email) introuvable.";
         return false;
     }
-    if ($pseudo != user['pseudo']) {
+    if ($pseudo != $user['pseudo']) {
         echo "le pseudo ($pseudo) ne correspond pas à l'email ($email).";
         return false;
     }
