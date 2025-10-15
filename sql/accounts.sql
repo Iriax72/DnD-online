@@ -1,7 +1,9 @@
-  CREATE TABLE IF NOT EXISTS accounts (
+DROP TABLE accounts;
+
+CREATE TABLE IF NOT EXISTS accounts (
     id CHAR(36) PRIMARY KEY DEFAULT (uuid()),
     pseudo VARCHAR(22),
-    hashed_password VARCHAR(22),
+    hashed_password VARCHAR(255),
     email VARCHAR(50),
     created_at BIGINT UNSIGNED
 );
