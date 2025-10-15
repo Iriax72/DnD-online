@@ -17,7 +17,7 @@ $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 //-------------------------
 
-function signin():void {
+function signin($pdo):void {
     $email = $_POST['new_email'];
     $stmt = $pdo->prepare("SELECT * FROM accounts WHERE email = :email LIMIT 1");
     $stmt->execute(['email' => $email]);
@@ -35,13 +35,13 @@ function signin():void {
     }
 }
 
-function login():void {
+function login($pdo):void {
     $email = $_POST['email'];
     $pseudo = $_POST['pseudo'];
     $password = $_POST['password'];
-    if (login_correspond($email, $pseudo, $password)) {
+    if (login_correspond($pdo, $email, $pseudo, $password)) {
         $_SESSION['connected'] = true;
-        $_SESSION['id'] = idOf($email);
+        $_SESSION['id'] = idOf($email, $pdo);
         $_SESSION['pseudo'] = $_POST['pseudo'];
         echo "vous etes connecté en tant que $pseudo.";
     } else {
@@ -50,7 +50,7 @@ function login():void {
     }
 }
 
-function login_correspond(string $email, string $pseudo, string $password):bool {
+function login_correspond($pdo, string $email, string $pseudo, string $password):bool {
     $stmt = $pdo->prepare("SELECT * FROM accounts WHERE email = :email LIMIT 1");
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch();
@@ -69,7 +69,7 @@ function login_correspond(string $email, string $pseudo, string $password):bool 
     return true;
 }
 
-function idOf(string $email):str {
+function idOf(string $email, $pdo):str {
     $stmt = $pdo->prepare("SELECT id FROM accounts WHERE email = :email LIMIT 1");
     $stmt->execute(['email' => $email]);
     return $stmt->fetch();
