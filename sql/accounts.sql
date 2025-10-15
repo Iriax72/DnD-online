@@ -1,5 +1,3 @@
-drop table accounts;
-
 CREATE TABLE IF NOT EXISTS accounts (
     id CHAR(36) PRIMARY KEY DEFAULT (uuid()),
     pseudo VARCHAR(22) NOT NULL,
