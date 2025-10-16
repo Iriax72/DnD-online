@@ -67,14 +67,16 @@ function verify_password(form){
 
 function verify_email_valid(form) {
     alert("verify email");
-    const email_input = form.querySelector("#new_email");
-    const email_adress = email_input.value();
-    if (!filter_var(email_adress, FILTER_VALIDATE_EMAIL)) {
-        alert("filter var => false");
-        add_error_class(form, [email_input]);
-        return "Adresse mail invalide";
+    const email_input = form.querySelector("#new_email") ?? false;
+    if (email_input) {
+        const email_adress = email_input.value();
+        if (!filter_var(email_adress, FILTER_VALIDATE_EMAIL)) {
+            alert("filter var => false");
+            add_error_class(form, [email_input]);
+            return "Adresse mail invalide";
+        }
+        alert("filter_var => truthy");
     }
-    alert("filter_var => truthy");
     return "";
 }
 
