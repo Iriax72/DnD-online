@@ -6,7 +6,7 @@ export function intercept_submit(form) {
         error.push(verify_char_number(form));
         error.push(verify_password(form));
         error.push(verify_confirm(form));
-        error.push(verify_email_valid(form));
+        //error.push(verify_email_valid(form));
         error_form(form, event, error);
     });
 }
