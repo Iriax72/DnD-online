@@ -6,6 +6,7 @@ export function intercept_submit(form) {
         error.push(verify_char_number(form));
         error.push(verify_password(form));
         error.push(verify_confirm(form));
+        error.push(verify_email_valid(form));
         error_form(form, event, error);
     });
 }
@@ -58,6 +59,16 @@ function verify_password(form){
             add_error_class(form, [password_input]);
             return "Le mot de passe doit contenur au moins un chiffre."
         }
+    }
+    return "";
+}
+
+function verify_email_valid(form) {
+    const email_input = form.querySelector("#new_email");
+    const email_adress = email_input.value();
+    if (!filter_var(email_adress, FILTER_VALIDATE_EMAIL)) {
+        add_error_class(form, [email_input]);
+        return "Adresse mail invalide";
     }
     return "";
 }
