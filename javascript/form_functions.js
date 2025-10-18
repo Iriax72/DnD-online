@@ -67,7 +67,7 @@ function verify_password(form){
 
 function verify_email_valid(form) {
     const email_input = form.querySelector("#new_email") ?? false;
-    if (email_input && !email_input.checkValidity()) {
+    if (email_input && !email_input.validity.typeMismatch) {
         add_error_class(form, [email_input]);
         return "Adresse mail invalide";
     }
