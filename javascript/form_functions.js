@@ -75,8 +75,8 @@ function verify_email_valid(form) {
             add_error_class(form, [email_input]);
             return "Adresse mail invalide";
         }
-        alert("filter_var => truthy");
     }
+    alert("filtervar => truthy");
     return "";
 }
 
