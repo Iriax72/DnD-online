@@ -36,7 +36,7 @@ function input_HTML(string $type, string $name, string $text, bool $optional =fa
     }
     $html = <<<HTML
 <label for="{$name}" id="{$name}_label">$text</label>
-<input type="{$type}" id="{$name}" name="{$name}"{$optional_attribut}{confirm_attribut}>
+<input type="{$type}" id="{$name}" name="{$name}"{$optional_attribut}{$confirm_attribut}>
 <br/>
 HTML;
     return $html;
