@@ -7,7 +7,7 @@ function form(string $form_name, string $title):string {
             <img src="/assets/images/cross.jpeg" alt="image de croix" class="img">
         </button>
     </span>
-    <form id="{$form_name}_form" method="post" class="form">
+    <form id="{$form_name}_form" method="post" class="form" novalidate>
         <h2>$title</h2>
         <div class="hidden error-div m-0">
             <p class="m-0"></p>
