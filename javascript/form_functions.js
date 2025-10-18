@@ -66,13 +66,11 @@ function verify_password(form){
 }
 
 function verify_email_valid(form) {
-    alert("verify email");
     const email_input = form.querySelector("#new_email") ?? false;
     if (email_input && !email_input.checkValidity()) {
-        alert("email invalid, return error")
         add_error_class(form, [email_input]);
         return "Adresse mail invalide";
-    } else { alert("email valid"); }
+    }
     return "";
 }
 
