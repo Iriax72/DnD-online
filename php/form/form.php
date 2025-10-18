@@ -25,7 +25,7 @@ HTML;
     return $html;
 };
 
-function input(string $type, string $name, string $text, bool $optional =false, bool $confirm =false):string {
+function input_HTML(string $type, string $name, string $text, bool $optional =false, bool $confirm =false):string {
     $optional_attribut = '';
     $confirm_attribut = '';
     if ($optional) {
