@@ -25,7 +25,7 @@ HTML;
     return $html;
 };
 
-function text_input(string $name, string $text, bool $optional =false, bool $confirm =false):string {
+function input(string $type, string $name, string $text, bool $optional =false, bool $confirm =false):string {
     $optional_attribut = '';
     $confirm_attribut = '';
     if ($optional) {
@@ -36,7 +36,7 @@ function text_input(string $name, string $text, bool $optional =false, bool $con
     }
     $html = <<<HTML
 <label for="{$name}" id="{$name}_label">$text</label>
-<input type="text" id="{$name}" name="{$name}"{$optional_attribut}{confirm_attribut}>
+<input type="{$type}" id="{$name}" name="{$name}"{$optional_attribut}{confirm_attribut}>
 <br/>
 HTML;
     return $html;
