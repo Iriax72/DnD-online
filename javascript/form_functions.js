@@ -69,12 +69,14 @@ function verify_email_valid(form) {
     alert("verify email");
     const email_input = form.querySelector("#new_email") ?? false;
     if (email_input) {
+        alert("il y a un champ new_email.")
         const email_adress = email_input.value();
         if (!filter_var(email_adress, FILTER_VALIDATE_EMAIL)) {
+            alert("email invalid, return error")
             alert("filter var => false");
             add_error_class(form, [email_input]);
             return "Adresse mail invalide";
-        }
+        } else { alert("email valid"); }
     }
     alert("filtervar => truthy");
     return "";
