@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 
 session_start();
 require __DIR__ . '/php/database.php';
+require __DIR__ . '/php/db/api.php';
 
 $_SESSION['connected'] = $_SESSION['connected'] ?? false;
 $page = $_GET['page'] ?? 'accueil';
