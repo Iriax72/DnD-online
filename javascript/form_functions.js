@@ -34,7 +34,12 @@ function verify_char_number(form) {
     inputs.forEach(i => {
         const v = i.value;
         const isString = typeof v === "string";
-        const hasGoodSize = v.length >= 5 && v.length <= 22;
+        let hasGoodSize = null;
+        if (! (i.id === "email" || i.id === "new_email")) {
+            hasGoodSize = v.length >= 5 && v.length <= 22;
+        } else {
+            hasGoodSize = v.length >= 5 && v.length <= 50;
+        }
         const isOptional = i.dataset.optional ?? false;
         const hasValue = v !== "";
         if ((!isOptional || hasValue) && isString && !hasGoodSize) {
