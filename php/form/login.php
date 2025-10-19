@@ -4,5 +4,5 @@ echo form('login', 'connexion');
 echo input_HTML('email', 'email', 'email');
 echo input_HTML('text', 'pseudo', 'pseudo');
 echo input_HTML('text', 'password', 'mot de passe');
-echo close_form('text', 'Se connecter');
+echo close_form('Se connecter');
 ?>
