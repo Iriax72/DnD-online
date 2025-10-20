@@ -120,3 +120,12 @@ function clear_error_value(form) {
     });
     form.querySelector(".error-div").classList.add("hidden");
 }
+
+async function is_email_free(email) {
+    try {
+        const reponse = await fetch('../php/db/api.php');
+        const data = await reponse.json();
+    } catch (error) {
+        console.log("Erreur dans le try-catch de is_email_free(email): ", error);
+    }
+}

@@ -5,6 +5,6 @@
     <title>DnD-Online</title>
     <link rel="shortcut icon" href="/assets/images/logo.png" type="image/png">
     <link rel="stylesheet" href="/style.css">
-    <script src="/javascript/nav.js" defer></script>
-    <script type="module" src="/javascript/form.js"></script>
+    <script src="/js/nav.js" defer></script>
+    <script type="module" src="/js/form.js"></script>
 </head>
