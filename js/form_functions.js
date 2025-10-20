@@ -70,10 +70,12 @@ function verify_password(form){
 
 function verify_email_valid(form) {
     const email_input = form.querySelector("#new_email") ?? false;
-    email_input ? alert(is_email_free(email_input.value)):null;
     if (email_input && email_input.validity.typeMismatch) {
         add_error_class(form, [email_input]);
         return "Adresse mail invalide";
+    }
+    if (!is_email_free(email_input.value)) {
+        return "Adresse mail déjà associée à un compte dnd online. (ajouter un truc style g oublié mon mdp)";
     }
     return "";
 }
@@ -122,17 +124,13 @@ function clear_error_value(form) {
     form.querySelector(".error-div").classList.add("hidden");
 }
 
-async function is_email_free(email) {
-    try {
-        const reponse = await fetch('../php/db/api.php');
-        const emails = await reponse.json();
-        emails.forEach(e => {
-            if (e === email) {
-                return false
-            }
-        });
-        return true;
-    } catch (error) {
-        console.log("Erreur dans le try-catch de is_email_free(email): ", error);
-    }
+function is_email_free(email) {
+    const reponse = fetch('../php/db/api.php');
+    const emails = reponse.json();
+    emails.forEach(e => {
+        if (e === email) {
+            return false
+        }
+    });
+    return true;    
 }
