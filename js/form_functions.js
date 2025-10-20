@@ -81,6 +81,7 @@ function verify_email_valid(form) {
         add_error_class(form, [email_input]);
         return "Adresse mail déjà associée à un compte dnd online. (ajouter un truc style g oublié mon mdp)";
     }
+    alert('on est aussi passé')
     return "";
 }
 
