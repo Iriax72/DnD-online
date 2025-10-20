@@ -1,6 +1,7 @@
 export function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         let error = [];
+        alert('test fonctionel');
         alert("intercept");
         clear_error_value(form);
         error.push(verify_no_empty(form));
