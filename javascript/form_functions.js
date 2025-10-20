@@ -1,15 +1,12 @@
 export function intercept_submit(form) {
     form.addEventListener("submit", (event) => {
         let error = [];
-        alert('test fonctionel');
-        alert("intercept");
         clear_error_value(form);
         error.push(verify_no_empty(form));
         error.push(verify_char_number(form));
         error.push(verify_password(form));
         error.push(verify_confirm(form));
         error.push(verify_email_valid(form));
-        alert(error);
         error_form(form, event, error);
     });
 }
