@@ -130,10 +130,13 @@ function clear_error_value(form) {
 }
 
 function is_email_free(email) {
-    alert('on est dedant')
     const reponse = fetch('../php/db/api.php');
     alert('étape 1 ok.')
-    const emails = reponse.json();
+    try {
+        const emails = reponse.json();
+    } catch (error) {
+        alert(error)
+    }
     alert('éatpe 2 ok.')
     emails.forEach(e => {
         if (e === email) {
