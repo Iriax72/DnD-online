@@ -69,12 +69,16 @@ function verify_password(form){
 }
 
 function verify_email_valid(form) {
+    alert('1')
     const email_input = form.querySelector("#new_email") ?? false;
     if (email_input && email_input.validity.typeMismatch) {
         add_error_class(form, [email_input]);
         return "Adresse mail invalide";
     }
+    alert('on y va')
     if (!is_email_free(email_input.value)) {
+        alert('on est passé!')
+        add_error_class(form, [email_input]);
         return "Adresse mail déjà associée à un compte dnd online. (ajouter un truc style g oublié mon mdp)";
     }
     return "";
