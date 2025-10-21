@@ -1,3 +1,5 @@
+alert('debut du script');
+
 import {intercept_submit} from "./form_functions.js";
 
 let isLoginOpend = false;
@@ -57,6 +59,6 @@ cross_buttons.forEach(b => {
         }
     };
 });
-
+alert('is');
 intercept_submit(login_form);
 intercept_submit(signin_form);

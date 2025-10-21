@@ -7,9 +7,9 @@ export function intercept_submit(form) {
         error.push(verify_char_number(form));
         error.push(verify_password(form));
         error.push(verify_confirm(form));
-        /*Promise.all(error).then(
+        Promise.all(error).then(
             error_form(form, event, error)
-        );*/
+        );
     });
 }
 
