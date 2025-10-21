@@ -1,6 +1,6 @@
-alert('debut du script');
-
 import {intercept_submit} from "./form_functions.js";
+
+alert("début");
 
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
