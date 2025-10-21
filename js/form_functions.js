@@ -3,11 +3,13 @@ export function intercept_submit(form) {
         let error = [];
         clear_error_value(form);
         error.push(verify_no_empty(form));
+        error.push(verify_email_valid(form));
         error.push(verify_char_number(form));
         error.push(verify_password(form));
         error.push(verify_confirm(form));
-        error.push(verify_email_valid(form));
-        error_form(form, event, error);
+        Promise.all(error).then(
+            error_form(form, event, error)
+        );
     });
 }
 
@@ -76,7 +78,7 @@ function verify_email_valid(form) {
         return "Adresse mail invalide";
     }
     alert('on y va')
-    if (!is_email_free(email_input.value)) {
+    if (! await is_email_free(email_input.value)) {
         alert('on est passé!')
         add_error_class(form, [email_input]);
         return "Adresse mail déjà associée à un compte dnd online. (ajouter un truc style g oublié mon mdp)";
@@ -85,7 +87,7 @@ function verify_email_valid(form) {
     return "";
 }
 
-function add_error_class(form, inputs) {
+async function add_error_class(form, inputs) {
     inputs.forEach(i => {
         i.classList.add("error-value");
         const label = form.querySelector(`#${i.id}_label`);
@@ -129,11 +131,11 @@ function clear_error_value(form) {
     form.querySelector(".error-div").classList.add("hidden");
 }
 
-function is_email_free(email) {
-    const reponse = fetch('../php/db/api.php');
+async function is_email_free(email) {
+    const reponse = await fetch('../php/db/api.php');
     alert(reponse)
     try {
-        const emails = reponse.json();
+        const emails = await reponse.json();
     } catch (error) {
         alert(error)
     }
