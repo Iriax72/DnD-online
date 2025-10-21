@@ -131,7 +131,7 @@ function clear_error_value(form) {
 
 function is_email_free(email) {
     const reponse = fetch('../php/db/api.php');
-    alert('étape 1 ok.')
+    alert(reponse)
     try {
         const emails = reponse.json();
     } catch (error) {
