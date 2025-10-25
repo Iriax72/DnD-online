@@ -1,35 +1,40 @@
-export function intercept_submit(form) {
-    form.addEventListener("submit", (event) => {
-        let error = [];
-        clear_error_value(form);
-        error.push(verify_no_empty(form));
-        error.push(verify_email_valid(form));
-        error.push(verify_char_number(form));
-        error.push(verify_password(form));
-        error.push(verify_confirm(form));
-        Promise.all(error).then(
-            error_form(form, event, error)
-        );
-    });
-}
-
-function verify_no_empty(form) {
-    let empty = [];
-    const inputs = [...form.querySelectorAll("input")];
-    inputs.forEach(input => {
-        if (!input.dataset.optional && input.value === "") {
-            empty.push(input);
-        }
-    });
-    if (empty.length > 0) {
-        add_error_class(form, empty);
-        return "Veuillez remplire tous les champs nécéssaires.";
+class Form {
+    constructor(form){
+        this.form = form;
     }
-    return "";
-}
 
-function verify_char_number(form) {
-    const inputs = [...form.querySelectorAll("input")];
+    intercept_submit() {
+        this.form.addEventListener("submit", (event) => {
+            let error = [];
+            this.clear_error_value();
+            error.push(this.verify_no_empty());
+            error.push(this.verify_email_valid());
+            error.push(this.verify_char_number());
+            error.push(this.verify_password());
+            error.push(this.verify_confirm());
+            Promise.all(error).then(
+                error_form(event, error)
+            );
+        });
+    }
+
+    verify_no_empty() {
+        let empty = [];
+        const inputs = [...this.form.querySelectorAll("input")];
+        inputs.forEach(input => {
+            if (!input.dataset.optional && input.value === "") {
+                empty.push(input);
+            }
+        });
+        if (empty.length > 0) {
+            add_error_class(empty);
+            return "Veuillez remplire tous les champs nécéssaires.";
+        }
+        return "";
+    }
+
+verify_char_number() {
+    const inputs = [...this.form.querySelectorAll("input")];
     let wrong_inputs = [];
     inputs.forEach(i => {
         const v = i.value;
@@ -47,57 +52,57 @@ function verify_char_number(form) {
         }
     });
     if (wrong_inputs.length > 0) {
-        add_error_class(form, wrong_inputs);
+        add_error_class(wrong_inputs);
         return "Veuillez entrez entre 5 et 22 charactères.";
     }
     return "";
 }
 
-function verify_password(form){
+verify_password(){
     //ca c'est pas ideal, il daudraut changer mais bon
-    const password_input = form.querySelector("#new_password") ?? null;
+    const password_input = this.form.querySelector("#new_password") ?? null;
     if (password_input){
         const password = password_input.value;
         if (password.length < 8) {
-            add_error_class(form, [password_input])
+            add_error_class([password_input])
             return "Le mot de passe doit faire au moins 8 charactères.";
         }
         if (!/\d/.test(password)) {
-            add_error_class(form, [password_input]);
+            add_error_class([password_input]);
             return "Le mot de passe doit contenur au moins un chiffre."
         }
     }
     return "";
 }
 
-function verify_email_valid(form) {
+verify_email_valid() {
     alert('1')
-    const email_input = form.querySelector("#new_email") ?? false;
+    const email_input = this.form.querySelector("#new_email") ?? false;
     if (email_input && email_input.validity.typeMismatch) {
-        add_error_class(form, [email_input]);
+        add_error_class([email_input]);
         return "Adresse mail invalide";
     }
     alert('on y va')
     if (! await is_email_free(email_input.value)) {
         alert('on est passé!')
-        add_error_class(form, [email_input]);
+        add_error_class([email_input]);
         return "Adresse mail déjà associée à un compte dnd online. (ajouter un truc style g oublié mon mdp)";
     }
     alert('on est aussi passé')
     return "";
 }
 
-async function add_error_class(form, inputs) {
+add_error_class(inputs) {
     inputs.forEach(i => {
         i.classList.add("error-value");
-        const label = form.querySelector(`#${i.id}_label`);
+        const label = this.form.querySelector(`#${i.id}_label`);
         label.classList.add("error-value-label");
     });
 }
 
-function error_form(form, event, error = []) {
+error_form(event, error = []) {
     //il faudrait pas querySelectorAll() ?
-    const error_div = form.querySelector(".error-div");
+    const error_div = this.form.querySelector(".error-div");
     if (error.some(e => e !== "")) {
         error_div.classList.remove("hidden");
         event.preventDefault();
@@ -108,30 +113,30 @@ function error_form(form, event, error = []) {
     error_div.querySelector("p").textContent = error_msg;
 }
 
-function verify_confirm(form) {
+verify_confirm() {
     //ca c'est pas idéal, il faudrait changer mais bon.
-    const password = form.querySelector("#new_password") ?? null;
-    const confirmation = form.querySelector("#confirm_new_password") ?? null;
+    const password = this.form.querySelector("#new_password") ?? null;
+    const confirmation = this.form.querySelector("#confirm_new_password") ?? null;
     if (password && confirmation && password.value != confirmation.value) {
-        add_error_class(form, [password, confirmation]);
+        add_error_class([password, confirmation]);
         return "Erreur dans la confirmation du mot de passe";
     }
     return "";
 }
 
-function clear_error_value(form) {
-    const label = [...form.querySelectorAll("label")];
-    const inputs = [...form.querySelectorAll("input")];
+clear_error_value() {
+    const label = [...this.form.querySelectorAll("label")];
+    const inputs = [...this.form.querySelectorAll("input")];
     label.forEach(l => {
         l.classList.remove("error-value-label");
     });
     inputs.forEach(i => {
         i.classList.remove("error-value");
     });
-    form.querySelector(".error-div").classList.add("hidden");
+    this.form.querySelector(".error-div").classList.add("hidden");
 }
 
-async function is_email_free(email) {
+async is_email_free(email) {
     const reponse = await fetch('../php/db/api.php');
     alert(reponse)
     try {
@@ -146,4 +151,5 @@ async function is_email_free(email) {
         }
     });
     return true;    
+}
 }

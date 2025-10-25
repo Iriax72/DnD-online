@@ -6,5 +6,5 @@
     <link rel="shortcut icon" href="/assets/images/logo.png" type="image/png">
     <link rel="stylesheet" href="/style.css">
     <script src="/js/nav.js" defer></script>
-    <script type="module" src="/js/form.js"></script>
+    <script type="module" src="/js/forms.js"></script>
 </head>
