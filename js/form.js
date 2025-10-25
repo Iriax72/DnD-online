@@ -1,4 +1,4 @@
-import {intercept_submit} from "./form_functions.js";
+//import {intercept_submit} from "./form_functions.js";
 
 alert("début");
 
