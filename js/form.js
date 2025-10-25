@@ -1,7 +1,9 @@
 try{
     import {intercept_submit} from "./form_functions.js";
+    alert("import réussi!");
 }catch(error){
-    alert("erreur dans l'importation du form_functions: ", error);
+    alert("erreur dans l'importation du form_functions: ");
+    alert(error);
 }
 
 alert("début");
