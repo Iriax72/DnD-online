@@ -1,12 +1,6 @@
-try{
-    import {intercept_submit} from "./form_functions.js";
-    alert("import réussi!");
-}catch(error){
-    alert("erreur dans l'importation du form_functions: ");
-    alert(error);
-}
-
-alert("début");
+alert("début")
+import {intercept_submit} from "./form_functions.js";
+alert("import réussi!");
 
 let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
