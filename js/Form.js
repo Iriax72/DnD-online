@@ -75,7 +75,7 @@ verify_password(){
     return "";
 }
 
-verify_email_valid() {
+ verify_email_valid() {
     alert('1')
     const email_input = this.form.querySelector("#new_email") ?? false;
     if (email_input && email_input.validity.typeMismatch) {
@@ -83,7 +83,7 @@ verify_email_valid() {
         return "Adresse mail invalide";
     }
     alert('on y va')
-    if (! await is_email_free(email_input.value)) {
+    if (! is_email_free(email_input.value)) {
         alert('on est passé!')
         add_error_class([email_input]);
         return "Adresse mail déjà associée à un compte dnd online. (ajouter un truc style g oublié mon mdp)";
@@ -136,11 +136,11 @@ clear_error_value() {
     this.form.querySelector(".error-div").classList.add("hidden");
 }
 
-async is_email_free(email) {
-    const reponse = await fetch('../php/db/api.php');
+is_email_free(email) {
+    const reponse = fetch('../php/db/api.php');
     alert(reponse)
     try {
-        const emails = await reponse.json();
+        const emails = reponse.json();
     } catch (error) {
         alert(error)
     }
