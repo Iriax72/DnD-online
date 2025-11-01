@@ -1,4 +1,3 @@
-alert("début")
 import {Form} from "./Form.js";
 alert("import réussi!");
 
