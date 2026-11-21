@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
-require __DIR__ . '/php/database.php';
+require __DIR__ . '/php/db/init.php';
 
 $_SESSION['connected'] = $_SESSION['connected'] ?? false;
 $page = $_GET['page'] ?? 'accueil';
@@ -11,11 +11,11 @@ $page = $_GET['page'] ?? 'accueil';
 
 <DOCTYPE html>
 <html lang="fr">
-    <?php require __DIR__ . '/php/head.php'; ?>
+    <?php require __DIR__ . '/php/elements/head.php'; ?>
     <body class="m-0 p-0">
         <?php
-        require __DIR__ . '/php/header.php';
-        require __DIR__ . '/php/nav.php';
+        require __DIR__ . '/php/elements/header.php';
+        require __DIR__ . '/php/elements/nav.php';
         ?>
         <main class="clickToQuitNav">
             <?php 
@@ -25,7 +25,7 @@ $page = $_GET['page'] ?? 'accueil';
             ?>
         </main>
         <?php
-        require __DIR__ . '/php/footer.php';
+        require __DIR__ . '/php/elements/footer.php';
         ?>
     </body>
 </html>

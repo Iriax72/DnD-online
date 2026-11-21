@@ -14,7 +14,7 @@ if (!is_string($email) || $email === '') {
     exit;
 }
 
-require_once __DIR__ . '/../database.php';
+require_once __DIR__ . '/../db/init.php';
 
 $stmt = $pdo->prepare('SELECT 1 FROM accounts WHERE email = :email LIMIT 1');
 $stmt->execute(['email' => $email]);
