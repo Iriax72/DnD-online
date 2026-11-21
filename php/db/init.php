@@ -76,7 +76,7 @@ function idOf(string $email, $pdo):string {
     return $row ? $row['id'] : '';
 }
 
-$sql_file = file_get_contents(__DIR__ . '/../sql/accounts.sql');
+$sql_file = file_get_contents(__DIR__ . '/../../sql/accounts.sql');
 $pdo->exec($sql_file);
 
 if (isset($_POST['new_email'])) {
