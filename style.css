@@ -1,10 +1,23 @@
+:root {
+    --black: #200202;
+    --dark-grey: #504040;
+    --medium-grey: #aa9999;
+    --light-grey: #eedddd;
+    --red: #cb3131;
+    --green: #137713;
+}
+
 body{
-    background-color: #1515ab;
+    background-color: var(--red);
     display: grid;
     grid-template-areas:
     "header"
     "main"
     "footer";
+}
+
+header, footer {
+    background-color: var(--black);
 }
 
 header{
@@ -16,7 +29,8 @@ header{
 }
 
 #l1{
-    background-color: #40408a;
+    background-color: var(--dark-grey);
+    color: var(--red);
     grid-area: l1;
     display: flex;
     justify-content: center;
@@ -28,7 +42,8 @@ header{
 
 #l2{
     height: 50px;
-    background-color: #050540;
+    background-color: var(--black);
+    color: var(--light-grey);
     grid-area: l2;
     display: flex;
     justify-content: space-around;
@@ -36,7 +51,7 @@ header{
 }
 
 .nav{
-    background-color: aqua;
+    background-color: var(--medium-grey);
     width: 120px;
     display: flex;
     align-items: center;
@@ -48,13 +63,13 @@ header{
 }
 
 .span{
-    background-color: orange;
+    background-color: var(--red);
     height: 44px;
     width: 44px;
 }
 
 .img-container{
-    background-color: #606060;
+    background-color: var(--medium-grey);
     height: 44px;
     width: 44px;
     display: flex;
@@ -71,7 +86,7 @@ header{
 .ul-no-style{list-style-type: none;}
 
 .nav-element{
-    background-color: #252525;
+    background-color: var(--black);
     width: 100%;
     height: 30px;
     margin: 4px;
@@ -83,13 +98,13 @@ header{
 
 .beautiful-a{
     text-decoration: none;
-    color: #efefef;
+    color: var(--light-grey);
 }
 
 main{grid-area: main;}
 
 main section{
-    background-color: chartreuse;
+    background-color: var(--black);
     padding: 4px;
     min-height: 400px;
 }
@@ -99,17 +114,16 @@ main section{
 .p-0{padding: 0;}
 
 .t-white{
-    color: #efefef;
+    color: var(--light-grey);
 }
 
 .hidden{
     display: none !important;
 }
 
-main section h2{color: #efefef;}
+main section h2{color: var(--light-grey);}
 
 footer{
-    background-color: #171171;
     grid-area: footer;
     padding: 8px;
 }
@@ -128,15 +142,15 @@ footer{
 .element{
     margin: 6px;
     padding: 6px;
-    background-color: aquamarine;
+    background-color: var(--dark-grey);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .pop-box{
-    background-color: black;
-    color: #efefef;
+    background-color: var(--black);
+    color: var(--light-grey);
     width: 90%;
     height: 90%;
     position: fixed;
@@ -147,7 +161,7 @@ footer{
     flex-direction: column;
     align-items: center;
     padding: 8px;
-    box-shadow: 0 0 10px #efefef;
+    box-shadow: 0 0 10px var(--light-grey);
     border-radius: 8px;
 }
 
@@ -168,8 +182,8 @@ footer{
 }
 
 .nice-btn{
-    background-color: #efefef;
-    color: black;
+    background-color: var(--dark-grey);
+    color: var(--red);
     border: none;
     padding: 4px;
     margin: 0;
@@ -186,17 +200,17 @@ footer{
 
 .form input{
     font-size: 1rem;
-    border: 2px solid #efefef;
+    border: 2px solid var(--light-grey);
 }
 
 .form label{
     font-size: 1.2rem;
-    color: #efefef;
+    color: var(--light-grey);
 }
 
 .error-div{
     border: 2px solid red !important;
-    background-color: #efefef !important;
+    background-color: var(--light-grey) !important;
     padding: 3px;
 }
 
