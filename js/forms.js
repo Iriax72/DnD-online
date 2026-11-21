@@ -5,13 +5,13 @@ let isLoginOpend = false;
 const login_buttons = [...document.querySelectorAll(".b-login")];
 const login_pop = document.querySelector("#login_pop");
 const login_form_html = document.querySelector("#login_form");
-login_form_object = new Form(login_form_html);
+const login_form_object = new Form(login_form_html);
 
 let isCreateAccountOpend = false;
 const signin_buttons = [...document.querySelectorAll(".b-signin")];
 const signin_pop = document.querySelector("#signin_pop");
 const signin_form_html = document.querySelector("#signin_form");
-signin_form_object = new Form(signin_form_html);
+const signin_form_object = new Form(signin_form_html);
 
 const cross_buttons = [...document.querySelectorAll(".close-pop")];
 

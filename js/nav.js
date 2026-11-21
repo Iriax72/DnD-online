@@ -2,7 +2,7 @@ const nav = document.querySelector("nav");
 const nav_buttons = [...nav.children[0].children];
 const nav_button = document.querySelector("#nav_button");
 let isNavOpend = false;
-const elementsQuitNav = [...document.querySelectorAll(".clickToqQuitNav")];
+const elementsQuitNav = [...document.querySelectorAll(".clickToQuitNav")];
 
 function toggle_nav() {
     isNavOpend ? nav.classList.add("hidden") : nav.classList.remove("hidden");
